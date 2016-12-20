@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_init"
+            android:icon="@drawable/ic_error_outline_black_24dp"
+            android:title="@string/section_init" />
+        <item
+            android:id="@+id/nav_station_police"
+            android:icon="@drawable/ic_place_black_24dp"
+            android:title="@string/section_police_stations" />
+        <item
+            android:id="@+id/nav_report_police"
+            android:icon="@drawable/ic_message_black_24dp"
+            android:title="@string/section_police_report" />
+        <item
+            android:id="@+id/nav_wanted"
+            android:icon="@drawable/ic_search_black_24dp"
+            android:title="@string/section_wanted" />
+
+        <item
+            android:id="@+id/nav_missing"
+            android:icon="@drawable/ic_perm_identity_black_24dp"
+            android:title="@string/section_missing" />
+    </group>
+
+    <!--
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+    -->
+
+</menu>

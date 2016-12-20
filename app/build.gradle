@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.keniobyte.bruino.minsegapp"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 4
+        versionName "0.4"
+        // Get Api Keys from gradle.properties enviroment variables
+        // Example : MinSegAppApiKeyCaptcha = "your_api_key"
+        resValue "string", "API_KEY_CAPCHTA", MinSegAppApiKeyCaptcha
+        resValue "string", "API_KEY_CAPCHTA_VERIFY", MinSegAppApiKeyCaptchaVerify
+        resValue "string", "API_KEY_MAPS_AUTOCOMPLETE", MinSegAppMapsAutocomplete
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+            resValue "string", "app_name", "Alerta Activa (debug)"
+            resValue "string", "API_KEY_GOOGLE_MAPS", MinSegAppApiKeyGoogleMapsDebug
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "app_name", "Alerta Activa"
+            resValue "string", "API_KEY_GOOGLE_MAPS", MinSegAppApiKeyGoogleMapsRelease
+        }
+    }
+
+    productFlavors {
+        dev {
+            minSdkVersion 21
+        }
+        prod {
+            // The actual minSdkVersion for the application.
+            minSdkVersion 15
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:design:23.0.1'
+    compile 'com.github.ganfra:material-spinner:1.1.1'
+    compile 'com.android.support:cardview-v7:21.0.+'
+    compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.google.android.gms:play-services-maps:9.4.0'
+    compile 'com.google.maps.android:android-maps-utils:0.4+'
+    compile 'io.nlopez.smartlocation:library:3.2.7'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'cz.msebera.android:httpclient:4.3.6'
+    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.mobsandgeeks:android-saripaar:2.0.2'
+    compile 'android.lib.recaptcha:reCAPTCHA:+'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+}

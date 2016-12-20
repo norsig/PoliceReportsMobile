@@ -1,0 +1,111 @@
+<resources>
+    <!--Buttons-->
+    <string name="next">Siguiente</string>
+    <string name="actived">Activar</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <!-- Login -->
+    <string name="login_ssn">Ingrese DNI:</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="sign_up">¿Nuevo? Registrarse</string>
+    <string name="error_messege">Error al Iniciar Sesión</string>
+    <!-- Activity Main -->
+    <string name="section_init">Inicio</string>
+    <string name="section_police_stations">Comisarías</string>
+    <string name="section_police_report">Denuncia</string>
+    <string name="section_wanted">Pedido de Captura</string>
+    <string name="section_missing">Personas Extraviadas</string>
+    <string name="section_internal_affairs">Conductas de Personal Policial</string>
+    
+    <string name="section_aircraft">Denuncia por aeronaves sospechosas</string>
+    <string name="section_short_aircraft">Denuncia por aeronaves</string>
+    <string name="aircraft_description">Hallazgo de aeronaves (aviones, helicópteros, vehículos aéreos no tripulados)
+        , que presenten indicios de alguna actividad aérea sospechosa que pudiera estar relacionada con alguna actividad ilegal.</string>
+    <string name="description_aircraft_map">Seleccione la ubicación de avistamiento de la aeronave:</string>
+    
+    <string name="year">años</string>
+    <string name="info_internal_affairs">Todas las conductas del personal policial de la Provincia de Tucumán
+        que puedan constituir faltas éticas, abusos funcionales graves y violaciones de derechos.</string>
+    <string name="section_anonymousReport">Denuncia Anónima por Drogas</string>
+    <string name="info_drug_report">Denunciar lugares de venta de drogas o producción</string>
+    <string name="send_anonymous_police_report">Denunciar Anónimamente</string>
+    <string name="my_police_station">Mi Comisaría</string>
+    <string name="list_station">Lista de Comisarías</string>
+    <string name="jurisdiction">Jurisdicción</string>
+    <string name="title_attention">Atención</string>
+    <string name="text_permissions_location">Para indicar su comisaría más cercana, permita que la aplicación acceda a tu Ubicación.</string>
+    <string name="text_gps">Para indicar su comisaría más cercana, debe activar la localización GPS.</string>
+    <string name="text_reverse_geocode">No se puede determinar la ubicación por algún motivo. Verifique su conexión a internet o intente más tarde.</string>
+    <string name="not_location_determined">No se puede determinar su Ubicación</string>
+    <string name="not_found_range">No se encuentra en el rango donde opera la Aplicación</string>
+    <string name="not_permission_location">No se podrá localizar la comisaría que le corresponde sin activar el GPS.</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="not_internet_kml">Sin internet para acceder a las ubicaciones de la comisaría</string>
+    <string name="call_911">911</string>
+    <string name="message_not_current_version">Hay una actualización disponible. Para efectuar denuncias debera actualizar a la última versión.</string>
+    <string name="button_update">Actualizar</string>
+    <string name="title_error">Error</string>
+    <string name="message_error_current_version">Existen problemas de conexión. Verifique su acceso a internet o intente más tarde.</string>
+    <!-- Register Users Date -->
+    <string name="title_form">Formulario Registro</string>
+    <string name="name">Nombre</string>
+    <string name="last_name">Apellido</string>
+    <string name="ssn">DNI</string>
+    <string name="birthday">Nacimiento</string>
+    <string name="birthday_hint_button">dd/mm/aaaa</string>
+    <string name="nationality">Nacionalidad</string>
+    <string name="address">Dirección</string>
+    <string name="marital_status">Estado Civil</string>
+    <string name="email">Email</string>
+    <string name="phone">Tel./Cel.</string>
+    <string name="occupation">Ocupación</string>
+    <string name="send_register_data">Registrarse</string>
+    <string name="father_name">Nombre Completo del Padre</string>
+    <string name="mother_name">Nombre Completo de la Madre</string>
+    <string name="invalid_email">Email Inválido</string>
+    <!-- Validation -->
+    <string name="validation">Validación</string>
+    <string name="input_validation">Ingrese Código de Validación enviado a su Email</string>
+    <string name="confirmation">Confirmar</string>
+    <string name="code_verificaion_error">Código de Verificación Incorrecto</string>
+    <string name="already_registered">El usuario que esta registrando ya existe.\nIniciar Sesion por favor.</string>
+    <!-- Marital Status -->
+    <string name="error_marital_status">Ingrese Estado Civil</string>
+    <string name="single">Soltero</string>
+    <string name="marrial">Casado</string>
+    <string name="widow">Viudo</string>
+    <string name="divorced">Divorciado</string>
+    <!-- Person Profile-->
+    <string name="section_provideData">Aportar Datos</string>
+    <string name="age">Edad</string>
+    <string name="send">Enviar</string>
+    <string name="error_share">Error al compartir imagen</string>
+    <!-- Report Police -->
+    <string name="perpetrator_name">Nombre del Acusado</string>
+    <string name="description">Descripción</string>
+    <string name="add_multimedia">Adjuntar Foto</string>
+    <string name="send_police_report">Denunciar</string>
+    <string name="time">Horario del Hecho</string>
+    <string name="dateButton">Fecha</string>
+    <string name="timeButton">Hora</string>
+    <string name="send_failure">Fallo al enviar la denuncia. Verifique su conexión a internet o intente más tarde.</string>
+
+    <string name="send_success">Denuncia enviada con Éxito</string>
+    <string name="msj_cool_down">Excedió el límite de denuncias. Vuelva a intentarlo en 30 minutos.</string>
+
+    <string name="sending">Enviando...</string>
+    <string name="wait_please">Espere por favor...</string>
+    <string name="date_report_police">Coloque Horario del Suceso</string>
+    <string name="messageDescription">Complete la Descripción</string>
+    <string name="messagePerpetrator">Complete con el nombre del acusado</string>
+    <!-- Maps Report Police Activity-->
+    <string name="incident_location">Indique el lugar del hecho (Opcional)</string>
+    <string name="selected_map_drug">Indique el lugar de venta de droga (Obligatorio)</string>
+    <string name="selected_map_aircraft">Indique el lugar de avistamiento (Obligatorio)</string>
+    <!-- Captha Dialog -->
+    <string name="captcha_title">Escriba las dos palabras:</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
