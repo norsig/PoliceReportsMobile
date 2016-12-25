@@ -36,7 +36,6 @@ First add these constants into your `home/.gradle/gradle.properties` file:
     MinSegAppApiKeyGoogleMapsRelease="your key"
 
 ## Dependencies
-- [nv-websocket-client](https://github.com/TakahikoKawasaki/nv-websocket-client): High-quality WebSocket client implementation in Java.
 - [MaterialSpinner](https://github.com/ganfra/MaterialSpinner): Spinner with Material Design - Down to API 9.
 - [android-maps-utils](https://github.com/googlemaps/android-maps-utils): Handy extensions to the Google Maps Android API.
 - [smart-location-lib](https://github.com/mrmans0n/smart-location-lib): Android library project that lets you manage the location updates to be as painless as possible.
