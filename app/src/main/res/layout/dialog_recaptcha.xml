@@ -7,36 +7,55 @@
 
     <TextView
         style="@style/Base.TextAppearance.AppCompat.Medium"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/captcha_title" />
+        android:text="@string/captcha_title"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:padding="@dimen/activity_vertical_margin"
+        android:textAlignment="center" />
 
-    <LinearLayout
+    <ProgressBar
+        android:id="@+id/captchaProgress"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:indeterminate="true"
+        android:theme="@style/LinearProgress" />
 
-        <android.lib.recaptcha.ReCaptcha
-            android:id="@+id/captcha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:scaleType="centerInside" />
+    <android.lib.recaptcha.ReCaptcha
+        android:id="@+id/captcha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:scaleType="centerInside" />
 
-        <ImageButton
-            android:id="@+id/buttonChangedCaptcha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="5dp"
-            android:background="@drawable/ic_cached_black_24dp" />
-
-    </LinearLayout>
 
     <EditText
         android:id="@+id/edit_text_captcha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textShortMessage" />
+        android:inputType="textShortMessage"
+        android:layout_marginBottom="21dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/reload"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recharge"
+            android:layout_alignParentLeft="true" />
+
+        <Button
+            android:id="@+id/okCaptcha"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/accept"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
 
 </LinearLayout>

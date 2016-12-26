@@ -5,6 +5,10 @@ package com.keniobyte.bruino.minsegapp.features.police_report;
  */
 
 public interface IPoliceReportPresenter {
-    void sendReportPolice();
+    void captcha();
+    void reloadCaptcha();
+    void sendPoliceReport();
+    void onDatetimeInput();
+    void onSetDatetime();
     //void attachFile();
 }

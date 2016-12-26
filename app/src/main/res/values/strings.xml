@@ -4,6 +4,7 @@
     <string name="actived">Activar</string>
     <string name="accept">Aceptar</string>
     <string name="cancel">Cancelar</string>
+    <string name="recharge">Recargar</string>
     <!-- Login -->
     <string name="login_ssn">Ingrese DNI:</string>
     <string name="login_button">Iniciar Sesión</string>
@@ -16,13 +17,13 @@
     <string name="section_wanted">Pedido de Captura</string>
     <string name="section_missing">Personas Extraviadas</string>
     <string name="section_internal_affairs">Conductas de Personal Policial</string>
-    
+
     <string name="section_aircraft">Denuncia por aeronaves sospechosas</string>
     <string name="section_short_aircraft">Denuncia por aeronaves</string>
     <string name="aircraft_description">Hallazgo de aeronaves (aviones, helicópteros, vehículos aéreos no tripulados)
         , que presenten indicios de alguna actividad aérea sospechosa que pudiera estar relacionada con alguna actividad ilegal.</string>
     <string name="description_aircraft_map">Seleccione la ubicación de avistamiento de la aeronave:</string>
-    
+
     <string name="year">años</string>
     <string name="info_internal_affairs">Todas las conductas del personal policial de la Provincia de Tucumán
         que puedan constituir faltas éticas, abusos funcionales graves y violaciones de derechos.</string>

@@ -19,12 +19,12 @@ public interface IPoliceReportView {
     String getAddress();
     String getReportType();
 
-    void showDatePicker();
+    void sendPoliceReportMessageError(int rStringMessage);
+    void sendPoliceReportMessageSuccess();
+    void showDatetimePicker();
+    void updateDatetimeLabel(String datetime);
     void showCaptcha();
-    void updateLabelTime();
-    void sendReportPoliceMessageError(int r_string_message);
-    void sendReportPoliceMessageSuccess();
+    void hideCaptcha();
     void showProgress();
     void hideProgress();
-    void navigationToHome();
 }

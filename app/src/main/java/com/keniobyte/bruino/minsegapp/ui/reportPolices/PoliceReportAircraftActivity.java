@@ -225,7 +225,7 @@ public class PoliceReportAircraftActivity extends ActionBarActivity {
         final View dialogCaptcha = inflater.inflate(R.layout.dialog_recaptcha, null);
         final ReCaptcha reCaptcha = (ReCaptcha) dialogCaptcha.findViewById(R.id.captcha);
         final EditText editTextCaptcha = (EditText) dialogCaptcha.findViewById(R.id.edit_text_captcha);
-        ImageButton buttonChangedCaptcha = (ImageButton) dialogCaptcha.findViewById(R.id.buttonChangedCaptcha);
+        /*ImageButton buttonChangedCaptcha = (ImageButton) dialogCaptcha.findViewById(R.id.buttonChangedCaptcha);
 
         buttonChangedCaptcha.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -237,7 +237,7 @@ public class PoliceReportAircraftActivity extends ActionBarActivity {
                     }
                 });
             }
-        });
+        });*/
 
         reCaptcha.setLanguageCode("es");
         reCaptcha.showChallengeAsync(getString(R.string.API_KEY_CAPCHTA), new ReCaptcha.OnShowChallengeListener() {
