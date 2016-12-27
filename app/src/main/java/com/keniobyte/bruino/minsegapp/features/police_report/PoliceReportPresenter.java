@@ -1,6 +1,7 @@
 package com.keniobyte.bruino.minsegapp.features.police_report;
 
 import com.keniobyte.bruino.minsegapp.R;
+import com.keniobyte.bruino.minsegapp.model.PoliceReport;
 import com.keniobyte.bruino.minsegapp.ui.base.BasePresenter;
 
 import java.text.SimpleDateFormat;
@@ -37,15 +38,18 @@ public class PoliceReportPresenter extends BasePresenter<PoliceReportActivityBet
     @Override
     public void sendPoliceReport() {
         reportPoliceView.showProgress();
-        reportPoliceInteractor.sendReportPolice(reportPoliceView.getPerpetrator()
-                , calendarToDateFormat(reportPoliceView.getIncidentDate())
-                , reportPoliceView.getIncidentDescriptor()
-                , reportPoliceView.getArrayUri()
-                , reportPoliceView.getLatitude()
-                , reportPoliceView.getLongitude()
-                , reportPoliceView.getAddress()
-                , reportPoliceView.getReportType()
-                , this);
+
+        PoliceReport policeReport = new PoliceReport();
+        policeReport.setNamePerpetrator(reportPoliceView.getPerpetrator());
+        policeReport.setIncidentDate(calendarToDateFormat(reportPoliceView.getIncidentDate()));
+        policeReport.setIncidentDescription(reportPoliceView.getIncidentDescription());
+        policeReport.setArrayListUriAttachFile(reportPoliceView.getArrayUriAttachFile());
+        policeReport.setLatitude(reportPoliceView.getLatitude());
+        policeReport.setLongitude(reportPoliceView.getLongitude());
+        policeReport.setIncidentAddress(reportPoliceView.getAddress());
+        policeReport.setTypePoliceReport(reportPoliceView.getTypePoliceReport());
+
+        reportPoliceInteractor.sendReportPolice(policeReport, this);
     }
 
     @Override
@@ -56,7 +60,7 @@ public class PoliceReportPresenter extends BasePresenter<PoliceReportActivityBet
     @Override
     public void onSetDatetime() {
         reportPoliceView.updateDatetimeLabel(new SimpleDateFormat("dd/MM/yy", Locale.US)
-                .format(reportPoliceView.getIncidentDate()));
+                .format(reportPoliceView.getIncidentDate().getTime()));
     }
 
     @Override

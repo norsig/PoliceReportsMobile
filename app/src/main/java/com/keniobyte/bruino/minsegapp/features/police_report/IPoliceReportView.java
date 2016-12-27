@@ -12,12 +12,12 @@ import java.util.Calendar;
 public interface IPoliceReportView {
     String getPerpetrator();
     Calendar getIncidentDate();
-    String getIncidentDescriptor();
-    ArrayList<Uri> getArrayUri();
+    String getIncidentDescription();
+    ArrayList<Uri> getArrayUriAttachFile();
     Double getLatitude();
     Double getLongitude();
     String getAddress();
-    String getReportType();
+    String getTypePoliceReport();
 
     void sendPoliceReportMessageError(int rStringMessage);
     void sendPoliceReportMessageSuccess();

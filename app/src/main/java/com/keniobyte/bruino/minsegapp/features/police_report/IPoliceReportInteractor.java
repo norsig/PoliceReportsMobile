@@ -2,6 +2,8 @@ package com.keniobyte.bruino.minsegapp.features.police_report;
 
 import android.net.Uri;
 
+import com.keniobyte.bruino.minsegapp.model.PoliceReport;
+
 import java.util.ArrayList;
 
 /**
@@ -9,8 +11,7 @@ import java.util.ArrayList;
  */
 
 public interface IPoliceReportInteractor {
-    void sendReportPolice(String perpetrator, String incidentDate, String incidentDescriptor, ArrayList<Uri> arrayUri
-            , Double latitude, Double longitude, String address, String typeReport, final OnSendReportFinishedListener listener);
+    void sendReportPolice(PoliceReport policeReport, final OnSendReportFinishedListener listener);
 
     interface OnSendReportFinishedListener {
         void sendReportPoliceError();

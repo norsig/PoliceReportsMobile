@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
 
+import com.keniobyte.bruino.minsegapp.model.PoliceReport;
 import com.keniobyte.bruino.minsegapp.requestHandler.MinSegAppRestClient;
 import com.keniobyte.bruino.minsegapp.utils.RealPathUtil;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -34,29 +35,28 @@ public class PoliceReportInteractor implements IPoliceReportInteractor {
     }
 
     @Override
-    public void sendReportPolice(String perpetrator, String incidentDate, String incidentDescriptor, ArrayList<Uri> arrayUri
-            , Double latitude, Double longitude, String address, String typeReport, final OnSendReportFinishedListener listener) {
+    public void sendReportPolice(PoliceReport policeReport, final OnSendReportFinishedListener listener) {
         RequestParams report = new RequestParams();
         //Send user's anonymous id if it exists.
         if (getAnonymousId() != 0){
             report.put("anonymous_id", getAnonymousId());
         }
         //Send date(optional)
-        if (incidentDate != null){
-            report.put("incident_date", incidentDate);
+        if (policeReport.getIncidentDate() != null){
+            report.put("incident_date", policeReport.getIncidentDate());
         }
         //Send picture(optional)
-        if(arrayUri != null){//TODO: changed to multiple attachedment
-            if(arrayUri.get(0).getScheme().equals(SCHEME_CONTENT)){
+        if(policeReport.getArrayListUriAttachFile() != null){//TODO: changed to multiple attachedment
+            if(policeReport.getArrayListUriAttachFile().get(0).getScheme().equals(SCHEME_CONTENT)){
                 try {
-                    report.put("file_name", context.getContentResolver().openInputStream(arrayUri.get(0)));
-                    report.put("picture", arrayUri.get(0).getLastPathSegment());
+                    report.put("file_name", context.getContentResolver().openInputStream(policeReport.getArrayListUriAttachFile().get(0)));
+                    report.put("picture", policeReport.getArrayListUriAttachFile().get(0).getLastPathSegment());
                 } catch (FileNotFoundException e) {
                     Log.e(TAG, e.toString());
                 }
             } else {
                 try {
-                    File file = new File(getRealPathImage(arrayUri.get(0)));
+                    File file = new File(getRealPathImage(policeReport.getArrayListUriAttachFile().get(0)));
                     report.put("picture", file);
                     report.put("file_name", file.getName());
                 } catch (FileNotFoundException e) {
@@ -65,18 +65,18 @@ public class PoliceReportInteractor implements IPoliceReportInteractor {
             }
         }
         //Send perpetrator(optional)
-        if (perpetrator != null){
-            report.put("perpetrator", perpetrator);
+        if (policeReport.getNamePerpetrator()!= null){
+            report.put("perpetrator", policeReport.getNamePerpetrator());
         }
         //Send report(required)
-        report.put("incident_description", incidentDate);
+        report.put("incident_description", policeReport.getIncidentDescription());
         //Send coordinates(required)
-        report.put("lat", latitude);
-        report.put("lng", longitude);
+        report.put("lat", policeReport.getLatitude());
+        report.put("lng", policeReport.getLongitude());
         //Send address(required)
-        report.put("address", address);
+        report.put("address", policeReport.getIncidentAddress());//TODO: verify word
         //Report type
-        report.put("report_type", typeReport);
+        report.put("report_type", policeReport.getTypePoliceReport());
 
         MinSegAppRestClient.post( "/endpoint/call/json/anonymous_report", report, new JsonHttpResponseHandler(){
             @Override

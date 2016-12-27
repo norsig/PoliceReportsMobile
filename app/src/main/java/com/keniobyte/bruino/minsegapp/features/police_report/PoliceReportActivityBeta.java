@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 
 import com.keniobyte.bruino.minsegapp.MainActivity;
 import com.keniobyte.bruino.minsegapp.R;
+import com.keniobyte.bruino.minsegapp.model.PoliceReport;
 import com.keniobyte.bruino.minsegapp.utils.CaptchaDialog;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -49,7 +51,11 @@ public class PoliceReportActivityBeta extends AppCompatActivity implements IPoli
     @BindView(R.id.btnTimerPicker) Button datetimeButton;
     @BindView(R.id.buttonSendReportPolice) Button sendButton;
 
-    @BindString(R.string.section_anonymousReport) String title;
+    @BindString(R.string.section_anonymousReport) String titlePoliceReportDrugs;
+    @BindString(R.string.section_aircraft) String titlePoliceReportAircraft;
+    @BindString(R.string.section_internal_affairs) String titlePoliceReportAffairs;
+    @BindString(R.string.section_police_report) String titlePoliceReportOnline;
+
     @BindString(R.string.accept) String ok;
     @BindString(R.string.recharge) String recharge;
     @BindString(R.string.sending) String progressDialogTitle;
@@ -192,13 +198,13 @@ public class PoliceReportActivityBeta extends AppCompatActivity implements IPoli
     }
 
     @Override
-    public String getIncidentDescriptor() {
+    public String getIncidentDescription() {
         return descriptionEditText.getText().toString();
     }
 
     //TODO: implement send multiple files
     @Override
-    public ArrayList<Uri> getArrayUri() {
+    public ArrayList<Uri> getArrayUriAttachFile() {
         return null;
     }
 
@@ -218,8 +224,8 @@ public class PoliceReportActivityBeta extends AppCompatActivity implements IPoli
     }
 
     @Override
-    public String getReportType() {
-        return this.getIntent().getExtras().getString("report_type");
+    public String getTypePoliceReport() {
+        return this.getIntent().getExtras().getString("type_report");
     }
 
     @Override
@@ -272,6 +278,22 @@ public class PoliceReportActivityBeta extends AppCompatActivity implements IPoli
     }
 
     private void setToolbar(){
+        String title = null;
+        switch (getTypePoliceReport()){
+            case PoliceReport.TYPE_POLICE_REPORT_AFFAIR:
+                title = titlePoliceReportAffairs;
+                break;
+            case PoliceReport.TYPE_POLICE_REPORT_AIRCRAFT:
+                ((ViewGroup) namePerpetratorEditText.getParent()).removeView(namePerpetratorEditText);
+                title = titlePoliceReportAircraft;
+                break;
+            case PoliceReport.TYPE_POLICE_REPORT_DRUGS:
+                title = titlePoliceReportDrugs;
+                break;
+            case PoliceReport.TYPE_POLICE_REPORT_ONLINE:
+                title = titlePoliceReportOnline;
+                break;
+        }
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
     }

@@ -56,7 +56,7 @@
     <string name="birthday">Nacimiento</string>
     <string name="birthday_hint_button">dd/mm/aaaa</string>
     <string name="nationality">Nacionalidad</string>
-    <string name="address">Dirección</string>
+    <string name="incidentAddress">Dirección</string>
     <string name="marital_status">Estado Civil</string>
     <string name="email">Email</string>
     <string name="phone">Tel./Cel.</string>
