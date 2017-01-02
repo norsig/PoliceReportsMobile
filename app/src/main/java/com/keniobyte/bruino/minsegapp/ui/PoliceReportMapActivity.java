@@ -28,12 +28,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.keniobyte.bruino.minsegapp.R;
-import com.keniobyte.bruino.minsegapp.features.police_report.PoliceReportActivityBeta;
+import com.keniobyte.bruino.minsegapp.features.police_report.PoliceReportActivityBeta2;
 import com.keniobyte.bruino.minsegapp.model.PoliceReport;
 import com.keniobyte.bruino.minsegapp.ui.navegationDrawer.ItemPoliceReportActivity;
-import com.keniobyte.bruino.minsegapp.ui.reportPolices.PoliceReportAircraftActivity;
 import com.keniobyte.bruino.minsegapp.ui.reportPolices.PoliceReportActivity;
-import com.keniobyte.bruino.minsegapp.ui.reportPolices.ReportPoliceAnonymusActivity;
 import com.keniobyte.bruino.minsegapp.ui.reportPolices.PoliceReportInternalAffairActivity;
 
 import org.json.JSONArray;
@@ -125,11 +123,11 @@ public class PoliceReportMapActivity extends ActionBarActivity implements OnMapR
                             intent.putExtra("isLocation", true);
                             break;
                         case ItemPoliceReportActivity.TYPE_ANONYMOUS_REPORT:
-                            intent = new Intent(getApplicationContext(), PoliceReportActivityBeta.class);
+                            intent = new Intent(getApplicationContext(), PoliceReportActivityBeta2.class);
                             intent.putExtra("type_report", PoliceReport.TYPE_POLICE_REPORT_DRUGS);
                             break;
                         case ItemPoliceReportActivity.TYPE_AIRCRAFT_POLICE_REPORT:
-                            intent = new Intent(getApplicationContext(), PoliceReportActivityBeta.class);
+                            intent = new Intent(getApplicationContext(), PoliceReportActivityBeta2.class);
                             intent.putExtra("type_report", PoliceReport.TYPE_POLICE_REPORT_AIRCRAFT);
                             break;
                     }

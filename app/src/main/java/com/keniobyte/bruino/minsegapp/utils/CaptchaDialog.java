@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -24,7 +25,8 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
- * Created by bruino on 25/12/16.
+ * @author  bruino
+ * @version 25/12/16.
  */
 
 public class CaptchaDialog extends DialogFragment {
@@ -89,6 +91,7 @@ public class CaptchaDialog extends DialogFragment {
     public void okCaptcha(){
         if (captcha.isShown() && !captchaEditText.getText().toString().isEmpty()){
             dismiss();
+            getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
             captcha.verifyAnswerAsync(apiKeyCaptchaVerify
                     , captchaEditText.getText().toString()
                     , onVerifyAnswerListener);
@@ -107,9 +110,6 @@ public class CaptchaDialog extends DialogFragment {
     public void setOnVerifyAnswerListener(ReCaptcha.OnVerifyAnswerListener onVerifyAnswerListener) {
         this.onVerifyAnswerListener = onVerifyAnswerListener;
     }
-    /*public ReCaptcha getCaptcha() {
-        return captcha;
-    }*/
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {

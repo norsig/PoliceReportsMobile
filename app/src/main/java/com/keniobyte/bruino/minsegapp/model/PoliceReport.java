@@ -3,24 +3,25 @@ package com.keniobyte.bruino.minsegapp.model;
 import android.net.Uri;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.List;
 
 /**
- * Created by bruino on 01/12/16.
+ * @author bruino
+ * @version 01/12/16.
  */
 
 public class PoliceReport {
     public final static String TYPE_POLICE_REPORT_DRUGS = "drugs";
     public final static String TYPE_POLICE_REPORT_AFFAIR = "corruption";
     public final static String TYPE_POLICE_REPORT_AIRCRAFT = "suspect_aircraft";
-    public final static String TYPE_POLICE_REPORT_ONLINE = "online";//TODO: defined
+    public final static String TYPE_POLICE_REPORT_ONLINE = "online";
 
     private String typePoliceReport;
     private String incidentAddress;
     private String namePerpetrator;
     private String incidentDescription;
     private String incidentDate;
-    private ArrayList<Uri> arrayListUriAttachFile;
+    private List<String> listPathsAttachments;
     private double latitude;
     private double longitude;
 
@@ -72,12 +73,12 @@ public class PoliceReport {
         this.incidentDate = incidentDate;
     }
 
-    public ArrayList<Uri> getArrayListUriAttachFile() {
-        return arrayListUriAttachFile;
+    public List<String> getListPathsAttachments() {
+        return listPathsAttachments;
     }
 
-    public void setArrayListUriAttachFile(ArrayList<Uri> arrayListUriAttachFile) {
-        this.arrayListUriAttachFile = arrayListUriAttachFile;
+    public void setListPathsAttachments(List<String> listPathsAttachments) {
+        this.listPathsAttachments = listPathsAttachments;
     }
 
     public double getLatitude() {

@@ -3,66 +3,83 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    app:layout_scrollFlags="scroll">
+    android:orientation="vertical">
+
 
     <Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary" />
+        android:background="@color/primary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <EditText
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/perpetrator_name"
-        android:padding="@dimen/activity_vertical_margin"
-        android:inputType="textCapWords|textPersonName"
-        android:maxLines="1" />
+        android:layout_height="match_parent">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/gray" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            style="@style/Widget.AppCompat.ImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:background="@null"
-            android:contentDescription="@string/date_report_police"
-            android:src="@drawable/ic_event_grey_600_24dp" />
-
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?android:attr/quickContactBadgeOverlay"
-            android:hint="@string/time" />
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/namePerpetratorEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="@string/perpetrator_name"
+                android:inputType="textCapWords|textPersonName"
+                android:maxLines="1"
+                android:padding="@dimen/activity_vertical_margin" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/gray" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/gray" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/description"
-        android:padding="@dimen/activity_vertical_margin"
-        android:inputType="textCapSentences|textMultiLine"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none" />
+                <ImageView
+                    style="@style/Widget.AppCompat.ImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:contentDescription="@string/date_report_police"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/ic_event_grey_600_24dp" />
 
+                <Button
+                    android:id="@+id/datetimeButton"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/time" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/gray" />
+
+            <EditText
+                android:id="@+id/descriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="@string/description"
+                android:inputType="textCapSentences|textMultiLine"
+                android:padding="@dimen/activity_vertical_margin" />
+
+            <com.keniobyte.bruino.minsegapp.ui.NestedListView
+                android:id="@+id/attachmentsListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:divider="@null" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -1,7 +1,12 @@
 package com.keniobyte.bruino.minsegapp.features.police_report;
 
+import com.kbeanie.multipicker.api.entity.ChosenImage;
+
+import java.util.List;
+
 /**
- * Created by bruino on 03/12/16.
+ * @author bruino
+ * @version 03/12/16.
  */
 
 public interface IPoliceReportPresenter {
@@ -10,5 +15,9 @@ public interface IPoliceReportPresenter {
     void sendPoliceReport();
     void onDatetimeInput();
     void onSetDatetime();
-    //void attachFile();
+    void showAttachFile(List<ChosenImage> images);
+
+    interface onListAttachmentsListener {
+        void onItemDelete(int position);
+    }
 }

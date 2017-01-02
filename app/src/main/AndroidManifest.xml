@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
@@ -95,7 +96,8 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".features.police_report.PoliceReportActivityBeta"></activity>
+        <activity android:name=".features.police_report.PoliceReportActivityBeta2" />
+        <activity android:name=".features.police_report.location_police_report.LocationPoliceReportActivity"></activity>
     </application>
 
 </manifest>

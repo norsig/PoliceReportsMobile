@@ -83,6 +83,12 @@
     <string name="send">Enviar</string>
     <string name="error_share">Error al compartir imagen</string>
     <!-- Report Police -->
+    <string name="police_report_drugs">Denuncia por Drogas</string>
+    <string name="police_report_affairs">Denuncia por Corrupción</string>
+    <string name="police_report_aircraft">Denuncia por Aeronaves Sospechosas</string>
+    <string name="police_report_online">Denuncia Online</string>
+    <string name="anonymous">Anónima</string>
+
     <string name="perpetrator_name">Nombre del Acusado</string>
     <string name="description">Descripción</string>
     <string name="add_multimedia">Adjuntar Foto</string>
@@ -100,6 +106,7 @@
     <string name="date_report_police">Coloque Horario del Suceso</string>
     <string name="messageDescription">Complete la Descripción</string>
     <string name="messagePerpetrator">Complete con el nombre del acusado</string>
+    <string name="messageComplete">Complete el Campo</string>
     <!-- Maps Report Police Activity-->
     <string name="incident_location">Indique el lugar del hecho (Opcional)</string>
     <string name="selected_map_drug">Indique el lugar de venta de droga (Obligatorio)</string>

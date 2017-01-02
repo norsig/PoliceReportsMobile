@@ -1,18 +1,21 @@
 package com.keniobyte.bruino.minsegapp.features.police_report;
 
+import com.kbeanie.multipicker.api.entity.ChosenImage;
 import com.keniobyte.bruino.minsegapp.R;
 import com.keniobyte.bruino.minsegapp.model.PoliceReport;
 import com.keniobyte.bruino.minsegapp.ui.base.BasePresenter;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 /**
- * Created by bruino on 13/12/16.
+ * @author bruino
+ * @version 02/01/17.
  */
 
-public class PoliceReportPresenter extends BasePresenter<PoliceReportActivityBeta> implements IPoliceReportPresenter, IPoliceReportInteractor.OnSendReportFinishedListener {
+public class PoliceReportPresenter extends BasePresenter<PoliceReportActivityBeta2> implements IPoliceReportPresenter, IPoliceReportInteractor.OnSendReportFinishedListener {
     private IPoliceReportInteractor reportPoliceInteractor;
     private IPoliceReportView reportPoliceView;
 
@@ -43,7 +46,7 @@ public class PoliceReportPresenter extends BasePresenter<PoliceReportActivityBet
         policeReport.setNamePerpetrator(reportPoliceView.getPerpetrator());
         policeReport.setIncidentDate(calendarToDateFormat(reportPoliceView.getIncidentDate()));
         policeReport.setIncidentDescription(reportPoliceView.getIncidentDescription());
-        policeReport.setArrayListUriAttachFile(reportPoliceView.getArrayUriAttachFile());
+        policeReport.setListPathsAttachments(reportPoliceView.getArrayPathsAtachments());
         policeReport.setLatitude(reportPoliceView.getLatitude());
         policeReport.setLongitude(reportPoliceView.getLongitude());
         policeReport.setIncidentAddress(reportPoliceView.getAddress());
@@ -59,8 +62,29 @@ public class PoliceReportPresenter extends BasePresenter<PoliceReportActivityBet
 
     @Override
     public void onSetDatetime() {
-        reportPoliceView.updateDatetimeLabel(new SimpleDateFormat("dd/MM/yy", Locale.US)
+        reportPoliceView.setTextDatetimeButton(new SimpleDateFormat("dd/MMM/yyyy - HH:mm", new Locale("es", "ES"))
                 .format(reportPoliceView.getIncidentDate().getTime()));
+    }
+
+    @Override
+    public void showAttachFile(List<ChosenImage> images) {
+        reportPoliceView.setImages(images);
+        reportPoliceView.setAdapter(reportPoliceView.createMediaResultAdapter(reportPoliceView.getImages()));
+        reportPoliceView.createListAttachments();
+        //TODO: implemented multiple files
+        /*if (reportPoliceView.getImages() == null) {
+            reportPoliceView.setImages(images);
+            reportPoliceView.setAdapter(reportPoliceView.createMediaResultAdapter(reportPoliceView.getImages()));
+            reportPoliceView.createListAttachments();
+        } else {
+            reportPoliceView.addItemAttachments(images);
+            reportPoliceView.getAdapter().notifyDataSetChanged();
+        }*/
+    }
+
+    @Override
+    public void onProgress(int progress) {
+        reportPoliceView.setProgressDialog(progress);
     }
 
     @Override

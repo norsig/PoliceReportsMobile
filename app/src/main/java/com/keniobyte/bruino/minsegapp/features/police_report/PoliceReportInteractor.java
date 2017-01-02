@@ -16,14 +16,12 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 
-import static android.content.ContentResolver.SCHEME_CONTENT;
-
 /**
- * Created by bruino on 12/12/16.
+ * @author bruino
+ * @version 02/01/17.
  */
 
 public class PoliceReportInteractor implements IPoliceReportInteractor {
@@ -46,22 +44,13 @@ public class PoliceReportInteractor implements IPoliceReportInteractor {
             report.put("incident_date", policeReport.getIncidentDate());
         }
         //Send picture(optional)
-        if(policeReport.getArrayListUriAttachFile() != null){//TODO: changed to multiple attachedment
-            if(policeReport.getArrayListUriAttachFile().get(0).getScheme().equals(SCHEME_CONTENT)){
-                try {
-                    report.put("file_name", context.getContentResolver().openInputStream(policeReport.getArrayListUriAttachFile().get(0)));
-                    report.put("picture", policeReport.getArrayListUriAttachFile().get(0).getLastPathSegment());
-                } catch (FileNotFoundException e) {
-                    Log.e(TAG, e.toString());
-                }
-            } else {
-                try {
-                    File file = new File(getRealPathImage(policeReport.getArrayListUriAttachFile().get(0)));
-                    report.put("picture", file);
-                    report.put("file_name", file.getName());
-                } catch (FileNotFoundException e) {
-                    Log.e(TAG, e.toString());
-                }
+        if(policeReport.getListPathsAttachments().size() > 0){//TODO: changed to multiple attachedment
+            try {
+                File file = new File(policeReport.getListPathsAttachments().get(0));
+                report.put("picture", file);
+                report.put("file_name", file.getName());
+            } catch (FileNotFoundException e) {
+                Log.e(TAG, e.toString());
             }
         }
         //Send perpetrator(optional)
@@ -80,6 +69,13 @@ public class PoliceReportInteractor implements IPoliceReportInteractor {
 
         MinSegAppRestClient.post( "/endpoint/call/json/anonymous_report", report, new JsonHttpResponseHandler(){
             @Override
+            public void onProgress(long bytesWritten, long totalSize) {
+                super.onProgress(bytesWritten, totalSize);
+                int progress = (int) ((bytesWritten * 100) / totalSize);
+                listener.onProgress(progress);
+            }
+
+            @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 try {
                     switch (response.getString("status")){
@@ -92,7 +88,6 @@ public class PoliceReportInteractor implements IPoliceReportInteractor {
                                         .putInt("anonymous_id", response.getInt("anonymous_id"))
                                         .apply();
                             }
-
                             listener.onSuccess();
                             break;
 
@@ -121,17 +116,5 @@ public class PoliceReportInteractor implements IPoliceReportInteractor {
 
     private int getAnonymousId(){
         return context.getSharedPreferences("minsegapp", Context.MODE_PRIVATE).getInt("anonymous_id", 0);
-    }
-
-    private String getRealPathImage(Uri uri){
-        // SDK < API11
-        if (Build.VERSION.SDK_INT < 11)
-            return RealPathUtil.getRealPathFromURI_BelowAPI11(context, uri);
-            // SDK >= 11 && SDK < 19
-        else if (Build.VERSION.SDK_INT < 19)
-            return RealPathUtil.getRealPathFromURI_API11to18(context, uri);
-            // SDK > 19 (Android 4.4)
-        else
-            return RealPathUtil.getRealPathFromURI_API19(context, uri);
     }
 }
