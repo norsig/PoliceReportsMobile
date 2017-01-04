@@ -108,9 +108,11 @@
     <string name="messagePerpetrator">Complete con el nombre del acusado</string>
     <string name="messageComplete">Complete el Campo</string>
     <!-- Maps Report Police Activity-->
-    <string name="incident_location">Indique el lugar del hecho (Opcional)</string>
-    <string name="selected_map_drug">Indique el lugar de venta de droga (Obligatorio)</string>
-    <string name="selected_map_aircraft">Indique el lugar de avistamiento (Obligatorio)</string>
+    <string name="required">Obligatorio</string>
+    <string name="optional">Opcional</string>
+    <string name="incident_location">Indique ubicación del hecho</string>
+    <string name="selected_map_drug">Indique ubicación de venta de droga</string>
+    <string name="selected_map_aircraft">Indique ubicación del avistamiento</string>
     <!-- Captha Dialog -->
     <string name="captcha_title">Escriba las dos palabras:</string>
     <string name="title_activity_main2">Main2Activity</string>

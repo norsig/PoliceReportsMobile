@@ -10,11 +10,11 @@ android {
         targetSdkVersion 23
         versionCode 6
         versionName "1.0"
-        // Get Api Keys from gradle.properties enviroment variables
+        resValue "string", "LOCATION", "-26.8167,-65.2167"
+        // Get Api Keys from gradle.properties environment variables
         // Example : MinSegAppApiKeyCaptcha = "your_api_key"
         resValue "string", "API_KEY_CAPCHTA", MinSegAppApiKeyCaptcha
         resValue "string", "API_KEY_CAPCHTA_VERIFY", MinSegAppApiKeyCaptchaVerify
-        resValue "string", "API_KEY_MAPS_AUTOCOMPLETE", MinSegAppMapsAutocomplete
     }
 
     buildTypes {
@@ -22,12 +22,14 @@ android {
             applicationIdSuffix ".debug"
             versionNameSuffix "-debug"
             resValue "string", "app_name", "Denuncia Activa (debug)"
+            resValue "string", "API_KEY_MAPS_AUTOCOMPLETE", MinSegAppMapsAutocompleteDebug
             resValue "string", "API_KEY_GOOGLE_MAPS", MinSegAppApiKeyGoogleMapsDebug
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             resValue "string", "app_name", "Denuncia Activa"
+            resValue "string", "API_KEY_MAPS_AUTOCOMPLETE", MinSegAppMapsAutocompleteRelease
             resValue "string", "API_KEY_GOOGLE_MAPS", MinSegAppApiKeyGoogleMapsRelease
         }
     }

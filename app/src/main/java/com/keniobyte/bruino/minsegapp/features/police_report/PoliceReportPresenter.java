@@ -16,93 +16,93 @@ import java.util.Locale;
  */
 
 public class PoliceReportPresenter extends BasePresenter<PoliceReportActivityBeta2> implements IPoliceReportPresenter, IPoliceReportInteractor.OnSendReportFinishedListener {
-    private IPoliceReportInteractor reportPoliceInteractor;
-    private IPoliceReportView reportPoliceView;
+    private IPoliceReportInteractor policeReportInteractor;
+    private IPoliceReportView policeReportView;
 
-    public PoliceReportPresenter(IPoliceReportInteractor reportPoliceInteractor) {
-        this.reportPoliceInteractor = reportPoliceInteractor;
+    public PoliceReportPresenter(IPoliceReportInteractor policeReportInteractor) {
+        this.policeReportInteractor = policeReportInteractor;
     }
 
-    public void addView(IPoliceReportView reportPoliceView) {
-        this.reportPoliceView = reportPoliceView;
+    public void addView(IPoliceReportView policeReportView) {
+        this.policeReportView = policeReportView;
     }
 
     @Override
     public void captcha() {
-        reportPoliceView.showCaptcha();
+        policeReportView.showCaptcha();
     }
 
     @Override
     public void reloadCaptcha() {
-        reportPoliceView.hideCaptcha();
-        reportPoliceView.showCaptcha();
+        policeReportView.hideCaptcha();
+        policeReportView.showCaptcha();
     }
 
     @Override
     public void sendPoliceReport() {
-        reportPoliceView.showProgress();
+        policeReportView.showProgress();
 
         PoliceReport policeReport = new PoliceReport();
-        policeReport.setNamePerpetrator(reportPoliceView.getPerpetrator());
-        policeReport.setIncidentDate(calendarToDateFormat(reportPoliceView.getIncidentDate()));
-        policeReport.setIncidentDescription(reportPoliceView.getIncidentDescription());
-        policeReport.setListPathsAttachments(reportPoliceView.getArrayPathsAtachments());
-        policeReport.setLatitude(reportPoliceView.getLatitude());
-        policeReport.setLongitude(reportPoliceView.getLongitude());
-        policeReport.setIncidentAddress(reportPoliceView.getAddress());
-        policeReport.setTypePoliceReport(reportPoliceView.getTypePoliceReport());
+        policeReport.setNamePerpetrator(policeReportView.getPerpetrator());
+        policeReport.setIncidentDate(calendarToDateFormat(policeReportView.getIncidentDate()));
+        policeReport.setIncidentDescription(policeReportView.getIncidentDescription());
+        policeReport.setListPathsAttachments(policeReportView.getArrayPathsAtachments());
+        policeReport.setLatitude(policeReportView.getLatitude());
+        policeReport.setLongitude(policeReportView.getLongitude());
+        policeReport.setIncidentAddress(policeReportView.getAddress());
+        policeReport.setTypePoliceReport(policeReportView.getTypePoliceReport());
 
-        reportPoliceInteractor.sendReportPolice(policeReport, this);
+        policeReportInteractor.sendReportPolice(policeReport, this);
     }
 
     @Override
     public void onDatetimeInput(){
-        reportPoliceView.showDatetimePicker();
+        policeReportView.showDatetimePicker();
     }
 
     @Override
     public void onSetDatetime() {
-        reportPoliceView.setTextDatetimeButton(new SimpleDateFormat("dd/MMM/yyyy - HH:mm", new Locale("es", "ES"))
-                .format(reportPoliceView.getIncidentDate().getTime()));
+        policeReportView.setTextDatetimeButton(new SimpleDateFormat("dd/MMM/yyyy - HH:mm", new Locale("es", "ES"))
+                .format(policeReportView.getIncidentDate().getTime()));
     }
 
     @Override
     public void showAttachFile(List<ChosenImage> images) {
-        reportPoliceView.setImages(images);
-        reportPoliceView.setAdapter(reportPoliceView.createMediaResultAdapter(reportPoliceView.getImages()));
-        reportPoliceView.createListAttachments();
+        policeReportView.setImages(images);
+        policeReportView.setAdapter(policeReportView.createMediaResultAdapter(policeReportView.getImages()));
+        policeReportView.createListAttachments();
         //TODO: implemented multiple files
-        /*if (reportPoliceView.getImages() == null) {
-            reportPoliceView.setImages(images);
-            reportPoliceView.setAdapter(reportPoliceView.createMediaResultAdapter(reportPoliceView.getImages()));
-            reportPoliceView.createListAttachments();
+        /*if (policeReportView.getImages() == null) {
+            policeReportView.setImages(images);
+            policeReportView.setAdapter(policeReportView.createMediaResultAdapter(policeReportView.getImages()));
+            policeReportView.createListAttachments();
         } else {
-            reportPoliceView.addItemAttachments(images);
-            reportPoliceView.getAdapter().notifyDataSetChanged();
+            policeReportView.addItemAttachments(images);
+            policeReportView.getAdapter().notifyDataSetChanged();
         }*/
     }
 
     @Override
     public void onProgress(int progress) {
-        reportPoliceView.setProgressDialog(progress);
+        policeReportView.setProgressDialog(progress);
     }
 
     @Override
     public void sendReportPoliceError() {
-        reportPoliceView.hideProgress();
-        reportPoliceView.sendPoliceReportMessageError(R.string.send_failure);
+        policeReportView.hideProgress();
+        policeReportView.sendPoliceReportMessageError(R.string.send_failure);
     }
 
     @Override
     public void reportPoliceCoolDown() {
-        reportPoliceView.hideProgress();
-        reportPoliceView.sendPoliceReportMessageError(R.string.msj_cool_down);
+        policeReportView.hideProgress();
+        policeReportView.sendPoliceReportMessageError(R.string.msj_cool_down);
     }
 
     @Override
     public void onSuccess() {
-        reportPoliceView.hideProgress();
-        reportPoliceView.sendPoliceReportMessageSuccess();
+        policeReportView.hideProgress();
+        policeReportView.sendPoliceReportMessageSuccess();
     }
 
     private String calendarToDateFormat(Calendar calendar){

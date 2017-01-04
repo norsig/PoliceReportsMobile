@@ -73,7 +73,6 @@ public class PoliceReportActivityBeta2 extends AppCompatActivity implements IPol
     @BindString(R.string.anonymous) String anonymous;
 
     @BindString(R.string.accept) String ok;
-    @BindString(R.string.recharge) String recharge;
     @BindString(R.string.sending) String progressDialogTitle;
     @BindString(R.string.wait_please) String progressDialogMessage;
     @BindString(R.string.send_success) String messageSuccess;
@@ -402,7 +401,6 @@ public class PoliceReportActivityBeta2 extends AppCompatActivity implements IPol
 
     public void pickImageSingle() {
         if (PackageManager.PERMISSION_GRANTED != ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-
             if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) context, Manifest.permission.READ_EXTERNAL_STORAGE)) {
                 ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 7);
             } else {

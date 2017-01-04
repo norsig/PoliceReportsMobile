@@ -23,8 +23,9 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.keniobyte.bruino.minsegapp.features.location_police_report.LocationPoliceReportActivity;
+import com.keniobyte.bruino.minsegapp.model.PoliceReport;
 import com.keniobyte.bruino.minsegapp.requestHandler.MinSegAppSingleton;
-import com.keniobyte.bruino.minsegapp.ui.PoliceReportMapActivity;
 import com.keniobyte.bruino.minsegapp.R;
 
 import org.json.JSONException;
@@ -89,32 +90,12 @@ public class ItemPoliceReportActivity extends ActionBarActivity {
 
         isCurrentVersion();
 
-        /*mButtonOnlinePoliceReport = (Button) rootView.findViewById(R.id.btnOnlinePoliceReport);
-        mButtonOnlinePoliceReport.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), PoliceReportMapActivity.class);
-                intent.putExtra("report_type", TYPE_ONLINE_REPORT);
-                startActivity(intent);
-            }
-        });*/
-
-        /*mButtonInternalAffairs = (Button) findViewById(R.id.btnInternalAffairs);
-        mButtonInternalAffairs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PoliceReportMapActivity.class);
-                intent.putExtra("report_type", TYPE_INTERNAL_AFFAIRS_REPORT);
-                startActivity(intent);
-            }
-        });*/
-
         Button buttonAircraft  = (Button) findViewById(R.id.btnAnonymousPoliceReport);
         buttonAircraft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), PoliceReportMapActivity.class);
-                intent.putExtra("report_type", TYPE_ANONYMOUS_REPORT);
+                Intent intent = new Intent(getApplicationContext(), LocationPoliceReportActivity.class);
+                intent.putExtra("type_report", PoliceReport.TYPE_POLICE_REPORT_DRUGS);
                 startActivity(intent);
             }
         });
@@ -123,8 +104,8 @@ public class ItemPoliceReportActivity extends ActionBarActivity {
         mButtonAnonymusDrugReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PoliceReportMapActivity.class);
-                intent.putExtra("report_type", TYPE_AIRCRAFT_POLICE_REPORT);
+                Intent intent = new Intent(getApplicationContext(), LocationPoliceReportActivity.class);
+                intent.putExtra("type_report", PoliceReport.TYPE_POLICE_REPORT_AIRCRAFT);
                 startActivity(intent);
             }
         });

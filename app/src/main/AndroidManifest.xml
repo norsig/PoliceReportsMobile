@@ -47,22 +47,7 @@
         <activity
             android:name=".ui.navegationDrawer.ItemMissingActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.PoliceReportMapActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.reportPolices.PoliceReportActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.reportPolices.ReportPoliceAnonymusActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.reportPolices.PoliceReportInternalAffairActivity"
-            android:screenOrientation="portrait" />
         <activity android:name=".ui.ListViewStationPoliceActivity" />
-        <activity
-            android:name=".ui.reportPolices.PoliceReportAircraftActivity"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.PersonProfileActivity"
             android:screenOrientation="portrait" />
@@ -97,7 +82,7 @@
         </receiver>
 
         <activity android:name=".features.police_report.PoliceReportActivityBeta2" />
-        <activity android:name=".features.police_report.location_police_report.LocationPoliceReportActivity"></activity>
+        <activity android:name=".features.location_police_report.LocationPoliceReportActivity"></activity>
     </application>
 
 </manifest>
