@@ -20,15 +20,14 @@
 
     <string name="section_aircraft">Denuncia por aeronaves sospechosas</string>
     <string name="section_short_aircraft">Denuncia por aeronaves</string>
-    <string name="aircraft_description">Hallazgo de aeronaves (aviones, helicópteros, vehículos aéreos no tripulados)
-        , que presenten indicios de alguna actividad aérea sospechosa que pudiera estar relacionada con alguna actividad ilegal.</string>
+    <string name="aircraft_description">Aviones, helicópteros o vehículos aéreos no tripulados que pudiéran estar relacionados con alguna actividad ilegal.</string>
     <string name="description_aircraft_map">Seleccione la ubicación de avistamiento de la aeronave:</string>
 
     <string name="year">años</string>
     <string name="info_internal_affairs">Todas las conductas del personal policial de la Provincia de Tucumán
         que puedan constituir faltas éticas, abusos funcionales graves y violaciones de derechos.</string>
-    <string name="section_anonymousReport">Denuncia Anónima por Drogas</string>
-    <string name="info_drug_report">Denunciar lugares de venta de drogas o producción</string>
+    <string name="section_anonymousReport">Denuncia por Drogas</string>
+    <string name="info_drug_report">Lugares/Puntos de venta de drogas, laboratorios donde se realizan su producción.</string>
     <string name="send_anonymous_police_report">Denunciar Anónimamente</string>
     <string name="my_police_station">Mi Comisaría</string>
     <string name="list_station">Lista de Comisarías</string>
