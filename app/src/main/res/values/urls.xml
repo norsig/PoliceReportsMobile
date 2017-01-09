@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="url_base_address_autocomplete">https://maps.googleapis.com/maps/api/place/autocomplete/json</string>
+    <string name="url_missing_persons">https://keniobyte.com/minsegbe/endpoint/call/json/missing</string>
+    <string name="url_wanted_persons">https://keniobyte.com/minsegbe/endpoint/call/json/wanted</string>
+    <string name="url_base_picture_wanted">https://keniobyte.com/minsegbe/static/wanted/</string>
+    <string name="url_base_picture_missing">https://keniobyte.com/minsegbe/static/missing/</string>
+</resources>

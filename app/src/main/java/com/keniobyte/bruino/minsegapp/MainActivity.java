@@ -19,12 +19,12 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_missing.SectionMissingPersonActivity;
+import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_wanted.SectionWantedPersonActivity;
 import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_police_report.SectionPoliceReportActivity;
 import com.keniobyte.bruino.minsegapp.requestHandler.MinSegAppSingleton;
 import com.keniobyte.bruino.minsegapp.ui.navegationDrawer.ItemInitial;
-import com.keniobyte.bruino.minsegapp.ui.navegationDrawer.ItemMissingActivity;
 import com.keniobyte.bruino.minsegapp.ui.navegationDrawer.ItemStationPoliceActivity;
-import com.keniobyte.bruino.minsegapp.ui.navegationDrawer.ItemWantedActivity;
 
 import org.json.JSONObject;
 
@@ -132,10 +132,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(getApplicationContext(), SectionPoliceReportActivity.class));
 
         } else if (id == R.id.nav_wanted) {
-            startActivity(new Intent(getApplicationContext(), ItemWantedActivity.class));
+            startActivity(new Intent(getApplicationContext(), SectionWantedPersonActivity.class));
 
         } else if (id == R.id.nav_missing) {
-            startActivity(new Intent(getApplicationContext(), ItemMissingActivity.class));
+            startActivity(new Intent(getApplicationContext(), SectionMissingPersonActivity.class));
         }
         navigationView.setCheckedItem(R.id.nav_init);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -11,7 +11,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageViewPerson"
+            android:id="@+id/personWantedImageView"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:adjustViewBounds="true" />
@@ -24,7 +24,7 @@
             android:padding="@dimen/label_text_size">
 
             <TextView
-                android:id="@+id/textViewNameWanted"
+                android:id="@+id/nameWantedTextView"
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
                 android:layout_alignParentTop="true" />
 
             <TextView
-                android:id="@+id/textViewDateWanted"
+                android:id="@+id/lastTimeSeeTextView"
                 style="@style/Base.TextAppearance.AppCompat.Subhead"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
