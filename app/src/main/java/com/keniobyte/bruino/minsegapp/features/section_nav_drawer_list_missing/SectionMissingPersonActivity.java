@@ -9,17 +9,20 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toolbar;
 
 import com.keniobyte.bruino.minsegapp.R;
 import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_missing.adapter.MissingPersonAdapterRecycler;
+import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_missing.item.MissingProfileActivity;
 import com.keniobyte.bruino.minsegapp.model.Person;
-import com.keniobyte.bruino.minsegapp.ui.PersonProfileActivity;
 import com.keniobyte.bruino.minsegapp.utils.RecyclerItemClickListener;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindDrawable;
 import butterknife.BindString;
@@ -114,11 +117,13 @@ public class SectionMissingPersonActivity extends AppCompatActivity implements I
 
     @Override
     public void navigationToMissingPerson(Person person) {
-        startActivity(new Intent(context, PersonProfileActivity.class)
+        Log.i(getClass().getSimpleName(), person.toString());
+        startActivity(new Intent(context, MissingProfileActivity.class)
                 .putExtra("id", person.getId())
                 .putExtra("name", person.getFullName())
                 .putExtra("age", person.getAge())
-                .putExtra("lastTimeSeen", person.getLastTimeSee())
+                .putExtra("lastTimeSeen", new SimpleDateFormat("dd MMM yyyy", Locale.US)
+                        .format(person.getLastTimeSee()))
                 .putExtra("imageURL", person.getUrlProfile()));
     }
 }

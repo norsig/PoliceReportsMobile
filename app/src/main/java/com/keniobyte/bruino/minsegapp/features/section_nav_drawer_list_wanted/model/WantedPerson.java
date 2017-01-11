@@ -9,7 +9,7 @@ import com.keniobyte.bruino.minsegapp.model.Person;
 
 public class WantedPerson extends Person {
     private String crime;
-    private int reward;
+    private int reward = 0;
 
     public String getCrime() {
         return crime;

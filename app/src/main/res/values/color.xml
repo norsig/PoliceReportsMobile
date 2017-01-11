@@ -7,4 +7,7 @@
     <color name="green_police">#98fd29</color>
     <color name="gray">#bbbbbb</color>
     <color name="gray_300">#dcdcdc</color>
+
+    <color name="white">#ffffff</color>
+    <color name="backround_text_profile">#5e000000</color>
 </resources>

@@ -9,17 +9,20 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toolbar;
 
 import com.keniobyte.bruino.minsegapp.R;
 import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_wanted.adapter.WantedPersonAdapterRecycler;
+import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_wanted.item.WantedProfileActivity;
 import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_wanted.model.WantedPerson;
-import com.keniobyte.bruino.minsegapp.ui.PersonProfileActivity;
 import com.keniobyte.bruino.minsegapp.utils.RecyclerItemClickListener;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindDrawable;
 import butterknife.BindString;
@@ -114,12 +117,15 @@ public class SectionWantedPersonActivity extends AppCompatActivity implements IS
 
     @Override
     public void navigationToWantedPerson(WantedPerson person) {
-        startActivity(new Intent(context, PersonProfileActivity.class)
+        Log.e(getClass().getSimpleName(), person.toString());
+        startActivity(new Intent(context, WantedProfileActivity.class)
                 .putExtra("id", person.getId())
                 .putExtra("name", person.getFullName())
                 .putExtra("age", person.getAge())
-                .putExtra("lastTimeSeen", person.getLastTimeSee())
+                .putExtra("lastTimeSeen", new SimpleDateFormat("dd MMM yyyy", Locale.US)
+                        .format(person.getLastTimeSee()))
                 .putExtra("imageURL", person.getUrlProfile())
-                .putExtra("crime", person.getCrime()));
+                .putExtra("crime", person.getCrime())
+                .putExtra("reward", person.getReward()));
     }
 }

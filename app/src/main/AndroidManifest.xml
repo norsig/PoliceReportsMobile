@@ -40,9 +40,6 @@
             android:screenOrientation="portrait" />
         <activity android:name=".ui.ListViewStationPoliceActivity" />
         <activity
-            android:name=".ui.PersonProfileActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".ui.PersonProfileContributeActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -77,6 +74,8 @@
         <activity android:name=".features.section_nav_drawer_police_report.SectionPoliceReportActivity" />
         <activity android:name=".features.section_nav_drawer_list_wanted.SectionWantedPersonActivity" />
         <activity android:name=".features.section_nav_drawer_list_missing.SectionMissingPersonActivity" />
+        <activity android:name=".features.section_nav_drawer_list_missing.item.MissingProfileActivity" />
+        <activity android:name=".features.section_nav_drawer_list_wanted.item.WantedProfileActivity" />
     </application>
 
 </manifest>

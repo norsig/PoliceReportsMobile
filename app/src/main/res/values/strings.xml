@@ -77,10 +77,13 @@
     <string name="widow">Viudo</string>
     <string name="divorced">Divorciado</string>
     <!-- Person Profile-->
+    <string name="crime">Crimen</string>
+    <string name="sex">Sexo</string>
     <string name="section_provideData">Aportar Datos</string>
     <string name="age">Edad</string>
     <string name="send">Enviar</string>
     <string name="error_share">Error al compartir imagen</string>
+    <string name="last_time_see">Vísto por última vez: </string>
     <!-- Report Police -->
     <string name="police_report_drugs">Denuncia por Drogas</string>
     <string name="police_report_affairs">Denuncia por Corrupción</string>

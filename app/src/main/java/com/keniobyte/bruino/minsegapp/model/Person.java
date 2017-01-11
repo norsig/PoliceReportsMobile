@@ -65,4 +65,16 @@ public class Person {
     public void setUrlProfile(String urlProfile) {
         this.urlProfile = urlProfile;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", fullName='" + fullName + '\'' +
+                ", age=" + age +
+                ", lastTimeSee=" + lastTimeSee +
+                ", urlProfile='" + urlProfile + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

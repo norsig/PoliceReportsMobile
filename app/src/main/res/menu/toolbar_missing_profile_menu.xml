@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_missing.item.MissingProfileActivity">
+
+    <item android:id="@+id/action_share"
+        android:icon="@drawable/ic_share_black_24dp"
+        app:showAsAction="always"
+        android:title="Compartir" />
+
+    <item android:id="@+id/action_provide_data"
+        android:icon="@drawable/ic_create_black_24dp"
+        app:showAsAction="always"
+        android:title="Aportar" />
+</menu>
