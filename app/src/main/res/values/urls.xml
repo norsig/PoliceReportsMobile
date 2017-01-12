@@ -5,4 +5,6 @@
     <string name="url_wanted_persons">https://keniobyte.com/minsegbe/endpoint/call/json/wanted</string>
     <string name="url_base_picture_wanted">https://keniobyte.com/minsegbe/static/wanted/</string>
     <string name="url_base_picture_missing">https://keniobyte.com/minsegbe/static/missing/</string>
+    <string name="url_missing_report">/endpoint/call/json/missing_data</string>
+    <string name="url_wanted_report">/endpoint/call/json/wanted_data</string>
 </resources>

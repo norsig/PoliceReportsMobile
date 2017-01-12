@@ -17,7 +17,7 @@ import java.io.IOException;
 
 /**
  * @author bruino
- * @version 10/01/17.
+ * @version 12/01/17.
  */
 
 public class WantedProfilePresenter extends BasePresenter<WantedProfileActivity> implements IWantedProfilePresenter {
@@ -39,8 +39,7 @@ public class WantedProfilePresenter extends BasePresenter<WantedProfileActivity>
         String url = wantedProfileView.getUrlProfile();
         String name = wantedProfileView.getWantedName();
         String lastTimeSee = context.getResources().getString(R.string.last_time_see) + " " + wantedProfileView.getLastTimeSee();
-        //int reward = wantedProfileView.getWantedReward();
-        int reward = 1000000;
+        int reward = wantedProfileView.getWantedReward();
         String crime = wantedProfileView.getWantedCrime();
         String age = String.valueOf(wantedProfileView.getWantedAge()) + " " + context.getResources().getString(R.string.year);
         String gender = wantedProfileView.getGender();

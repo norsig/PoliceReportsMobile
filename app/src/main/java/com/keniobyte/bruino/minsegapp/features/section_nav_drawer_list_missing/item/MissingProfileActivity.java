@@ -18,7 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.keniobyte.bruino.minsegapp.R;
-import com.keniobyte.bruino.minsegapp.ui.PersonProfileContributeActivity;
+import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_missing.missing_report.MissingReportActivity;
 import com.keniobyte.bruino.minsegapp.utils.SquareImageView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -195,7 +195,7 @@ public class MissingProfileActivity extends AppCompatActivity implements IMissin
 
     @Override
     public void navigationToMissingReport() {
-        startActivity(new Intent(context, PersonProfileContributeActivity.class)
+        startActivity(new Intent(context, MissingReportActivity.class)
                 .putExtra("id", getId()));
     }
 
