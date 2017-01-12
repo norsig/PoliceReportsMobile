@@ -52,9 +52,9 @@ public class MissingReportInteractor implements IMissingReportInteractor {
                                     listener.onSuccess();
                                     break;
 
-                                case "cool_down":
+                                /*case "cool_down":
                                     listener.missingReportCoolDown();
-                                    break;
+                                    break;*/
                             }
                         } catch (JSONException e) {
                             Log.e(TAG, e.toString());
