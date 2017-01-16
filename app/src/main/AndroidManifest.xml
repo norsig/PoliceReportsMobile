@@ -35,9 +35,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.navegationDrawer.ItemStationPoliceActivity"
-            android:screenOrientation="portrait" />
         <activity android:name=".ui.ListViewStationPoliceActivity" />
         <activity
             android:name=".ui.LoginActivity"
@@ -75,6 +72,7 @@
         <activity android:name=".features.section_nav_drawer_list_wanted.item.WantedProfileActivity" />
         <activity android:name=".features.section_nav_drawer_list_missing.missing_report.MissingReportActivity" />
         <activity android:name=".features.section_nav_drawer_list_wanted.wanted_report.WantedReportActivity" />
+        <activity android:name=".features.section_police_stations.PoliceStationsActivity"></activity>
     </application>
 
 </manifest>

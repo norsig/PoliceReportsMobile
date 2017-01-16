@@ -22,10 +22,9 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_missing.SectionMissingPersonActivity;
 import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_wanted.SectionWantedPersonActivity;
 import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_police_report.SectionPoliceReportActivity;
+import com.keniobyte.bruino.minsegapp.features.section_police_stations.PoliceStationsActivity;
 import com.keniobyte.bruino.minsegapp.requestHandler.MinSegAppSingleton;
 import com.keniobyte.bruino.minsegapp.ui.navegationDrawer.ItemInitial;
-import com.keniobyte.bruino.minsegapp.ui.navegationDrawer.ItemStationPoliceActivity;
-
 import org.json.JSONObject;
 
 /**
@@ -126,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .commit();
 
         } else if (id == R.id.nav_station_police) {
-            startActivity(new Intent(getApplicationContext(), ItemStationPoliceActivity.class));
+            startActivity(new Intent(getApplicationContext(), PoliceStationsActivity.class));
 
         } else if (id == R.id.nav_report_police) {
             startActivity(new Intent(getApplicationContext(), SectionPoliceReportActivity.class));

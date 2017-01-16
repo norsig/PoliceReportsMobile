@@ -1,0 +1,109 @@
+{
+   "police_stations":[
+      {
+         "name":"Comisaria 1ra",
+         "jurisdiction_id":1,
+         "lat":-26.79616961,
+         "lng":-65.24071808,
+         "id":1
+      },
+      {
+         "name":"Comisaria 2da",
+         "jurisdiction_id":3,
+         "lat":-26.828195,
+         "lng":-65.2391338,
+         "id":2
+      },
+{
+         "name":"Comisaria 3ra",
+         "jurisdiction_id":2,
+         "lat":-26.8263495,
+         "lng":-65.215447,
+         "id":3
+      },
+{
+         "name":"Comisaria 4ta",
+         "jurisdiction_id":4,
+         "lat":-26.8514885,
+         "lng":-65.1972914,
+         "id":4
+      },
+{
+         "name":"Comisaria 5ta",
+         "jurisdiction_id":5,
+         "lat":-26.8079795,
+         "lng":-65.20086449999998,
+         "id":5
+      },
+{
+         "name":"Comisaria 6ta",
+         "jurisdiction_id":6,
+         "lat":-26.813585,
+         "lng":-65.21961479999999,
+         "id":6
+      },
+{
+         "name":"Comisaria 7ma",
+         "jurisdiction_id":7,
+         "lat":-26.8197119,
+         "lng":-65.2357341,
+         "id":7
+      },
+{
+         "name":"Comisaria 8va",
+         "jurisdiction_id":8,
+         "lat":-26.8330757,
+         "lng":-65.26735450000001,
+         "id":8
+      },
+{
+         "name":"Comisaria 9na",
+         "jurisdiction_id":9,
+         "lat":-26.8667694,
+         "lng":-65.21921980000002,
+         "id":9
+      },
+{
+         "name":"Comisaria 10ma",
+         "jurisdiction_id":10,
+         "lat":-26.8144015,
+         "lng":-65.1804189,
+         "id":10
+      },
+{
+         "name":"Comisaria 11va",
+         "jurisdiction_id":11,
+         "lat":-26.8356699,
+         "lng":-65.25243339999997,
+         "id":11
+      },
+{
+         "name":"Comisaria 12va",
+         "jurisdiction_id":12,
+         "lat":-26.8086159,
+         "lng":-65.25243339999997,
+         "id":12
+      },
+{
+         "name":"Comisaria 13va",
+         "jurisdiction_id":13,
+         "lat":-26.854133600000004,
+         "lng":-65.23511250000001,
+         "id":13
+      },
+{
+         "name":"Comisaria 14va",
+         "jurisdiction_id":14,
+         "lat":-26.7958899,
+         "lng":-65.2306688,
+         "id":14
+      },
+{
+         "name":"Comisaria de la Mujer",
+         "jurisdiction_id":2,
+         "lat":-26.8370912,
+         "lng":-65.20807390000002,
+         "id":15
+      }
+   ]
+}
