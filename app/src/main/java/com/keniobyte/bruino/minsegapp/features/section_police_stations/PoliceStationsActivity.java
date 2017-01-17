@@ -26,6 +26,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.maps.android.kml.KmlLayer;
 import com.keniobyte.bruino.minsegapp.R;
+import com.keniobyte.bruino.minsegapp.features.section_police_stations.listPoliceStations.PoliceStationsInfoActivity;
 
 import org.json.JSONException;
 import org.xmlpull.v1.XmlPullParserException;
@@ -59,7 +60,6 @@ public class PoliceStationsActivity extends AppCompatActivity implements IPolice
     @BindString(R.string.not_found_range) String messageNotFoundRange;
 
     @BindDrawable(R.drawable.ic_arrow_back_white_24dp) Drawable arrowBack;
-
 
     private Context context = this;
     private PoliceStationsPresenter presenter;
@@ -219,6 +219,11 @@ public class PoliceStationsActivity extends AppCompatActivity implements IPolice
         }
         googleMap.setMyLocationEnabled(true);
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 14));
+    }
+
+    @Override
+    public void navigationToListPoliceStations() {
+        startActivity(new Intent(context, PoliceStationsInfoActivity.class));
     }
 
     @OnClick({R.id.myPoliceStationButton, R.id.listPoliceStationsButton})

@@ -15,37 +15,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NameStation"
-            android:id="@+id/tNameStation" />
+            android:id="@+id/namePoliceStationTextView" />
 
-        <LinearLayout
+        <TextView
+            style="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
-            <TextView
-                style="@style/TextAppearance.AppCompat.Subhead"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Locality"
-                android:id="@+id/tLocality" />
+            android:layout_gravity="center_vertical"
+            android:text="Locality"
+            android:id="@+id/localityPoliceStationTextView" />
 
-            <TextView
-                style="@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Address"
-                android:id="@+id/tAddress" />
-        </LinearLayout>
+        <TextView
+            style="@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:id="@+id/addressPoliceStationTextView" />
 
         <TextView
             style="@style/TextAppearance.AppCompat.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Phone"
-            android:id="@+id/tPhone" />
+            android:id="@+id/phonePoliceStationsTextView" />
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/buttonPhone"
+        android:id="@+id/callPoliceStationButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"

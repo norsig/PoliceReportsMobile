@@ -26,7 +26,7 @@ import io.nlopez.smartlocation.SmartLocation;
 
 /**
  * @author bruino
- * @version 16/01/17.
+ * @version 17/01/17.
  */
 
 public class PoliceStationsPresenter extends BasePresenter<PoliceStationsActivity> implements IPoliceStationsPresenter {
@@ -90,7 +90,7 @@ public class PoliceStationsPresenter extends BasePresenter<PoliceStationsActivit
 
     @Override
     public void onClickListPoliceStations() {
-
+        policeStationsView.navigationToListPoliceStations();
     }
 
     private int containsJurisdiction(Location location){

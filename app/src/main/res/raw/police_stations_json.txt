@@ -1,109 +1,154 @@
 {
    "police_stations":[
       {
+         "id":1,
          "name":"Comisaria 1ra",
          "jurisdiction_id":1,
+         "city":"San Miguel de Tucumán",
+         "address":"San Martín 224",
+         "phone":"4310480",
          "lat":-26.79616961,
-         "lng":-65.24071808,
-         "id":1
+         "lng":-65.24071808
       },
       {
+         "id":2,
          "name":"Comisaria 2da",
          "jurisdiction_id":3,
+         "city":"San Miguel de Tucumán",
+         "address":"Buenos Aires 479",
+         "phone":"4248006",
          "lat":-26.828195,
-         "lng":-65.2391338,
-         "id":2
+         "lng":-65.2391338
       },
 {
+         "id":3,
          "name":"Comisaria 3ra",
          "jurisdiction_id":2,
+         "city":"San Miguel de Tucumán",
+         "address":"Lamadrid 2556",
+         "phone":"4330439",
          "lat":-26.8263495,
-         "lng":-65.215447,
-         "id":3
+         "lng":-65.215447
       },
 {
+         "id":4,
          "name":"Comisaria 4ta",
          "jurisdiction_id":4,
+         "city":"San Miguel de Tucumán",
+         "address":"Diagonal Eugenio Mendez 369",
+         "phone":"4248021",
          "lat":-26.8514885,
-         "lng":-65.1972914,
-         "id":4
+         "lng":-65.1972914
       },
 {
+         "id":5,
          "name":"Comisaria 5ta",
          "jurisdiction_id":5,
+         "city":"San Miguel de Tucumán",
+         "address":"Muñecas 1658",
+         "phone":"4273810",
          "lat":-26.8079795,
-         "lng":-65.20086449999998,
-         "id":5
+         "lng":-65.20086449999998
       },
 {
+         "id":6,
          "name":"Comisaria 6ta",
          "jurisdiction_id":6,
+         "city":"San Miguel de Tucumán",
+         "address":"España 1715",
+         "phone":"4320558",
          "lat":-26.813585,
-         "lng":-65.21961479999999,
-         "id":6
+         "lng":-65.21961479999999
       },
 {
+         "id":7,
          "name":"Comisaria 7ma",
          "jurisdiction_id":7,
+         "city":"San Miguel de Tucumán",
+         "address":"Don Bosco 2601",
+         "phone":"4330573",
          "lat":-26.8197119,
-         "lng":-65.2357341,
-         "id":7
+         "lng":-65.2357341
       },
 {
+         "id":8,
          "name":"Comisaria 8va",
          "jurisdiction_id":8,
+         "city":"San Miguel de Tucumán",
+         "address":"Av. Poviña y Alsina",
+         "phone":"4392541",
          "lat":-26.8330757,
-         "lng":-65.26735450000001,
-         "id":8
+         "lng":-65.26735450000001
       },
 {
+         "id":9,
          "name":"Comisaria 9na",
          "jurisdiction_id":9,
+         "city":"San Miguel de Tucumán",
+         "address":"Av. Democracia y Ayacucho",
+         "phone":"4295121",
          "lat":-26.8667694,
-         "lng":-65.21921980000002,
-         "id":9
+         "lng":-65.21921980000002
       },
 {
+         "id":10,
          "name":"Comisaria 10ma",
          "jurisdiction_id":10,
+         "city":"San Miguel de Tucumán",
+         "address":"Blas Parera N° 810",
+         "phone":"4282887",
          "lat":-26.8144015,
-         "lng":-65.1804189,
-         "id":10
+         "lng":-65.1804189
       },
 {
+         "id":11,
          "name":"Comisaria 11va",
          "jurisdiction_id":11,
+         "city":"San Miguel de Tucumán",
+         "address":"Av Benjamin Aráoz 1095",
+         "phone":"4310337",
          "lat":-26.8356699,
-         "lng":-65.25243339999997,
-         "id":11
+         "lng":-65.25243339999997
       },
 {
+         "id":12,
          "name":"Comisaria 12va",
          "jurisdiction_id":12,
+         "city":"San Miguel de Tucumán",
+         "address":"Felix de Olazabal 1400",
+         "phone":"4347787",
          "lat":-26.8086159,
-         "lng":-65.25243339999997,
-         "id":12
+         "lng":-65.25243339999997
       },
 {
+         "id":13,
          "name":"Comisaria 13va",
          "jurisdiction_id":13,
+         "city":"San Miguel de Tucumán",
+         "address":"Magallanes 1390",
+         "phone":"4366670",
          "lat":-26.854133600000004,
-         "lng":-65.23511250000001,
-         "id":13
+         "lng":-65.23511250000001
       },
 {
+         "id":14,
          "name":"Comisaria 14va",
          "jurisdiction_id":14,
+         "city":"San Miguel de Tucumán",
+         "address":"Manuel Estrada 2670",
+         "phone":"4341256",
          "lat":-26.7958899,
-         "lng":-65.2306688,
-         "id":14
+         "lng":-65.2306688
       },
 {
+         "id":15,
          "name":"Comisaria de la Mujer",
          "jurisdiction_id":2,
+         "city":"San Miguel de Tucumán",
+         "address":"Buenos Aires 479",
+         "phone":"4248069",
          "lat":-26.8370912,
-         "lng":-65.20807390000002,
-         "id":15
+         "lng":-65.20807390000002
       }
    ]
 }

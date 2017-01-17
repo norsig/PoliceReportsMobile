@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  * @author bruino
- * @version 16/01/17.
+ * @version 17/01/17.
  */
 
 public interface IPoliceStationsView {
@@ -22,4 +22,5 @@ public interface IPoliceStationsView {
     void notPermissionLocationMessage();
     void permissionLocationMessage();
     void setMyLocation(Marker marker);
+    void navigationToListPoliceStations();
 }
