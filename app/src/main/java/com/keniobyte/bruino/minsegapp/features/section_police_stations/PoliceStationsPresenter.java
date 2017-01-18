@@ -64,7 +64,7 @@ public class PoliceStationsPresenter extends BasePresenter<PoliceStationsActivit
 
     @Override
     public void onClickMyPoliceStations() {
-        if (SmartLocation.with(context).location().state().isGpsAvailable()){
+        if (SmartLocation.with(context).location().state().isGpsAvailable() || SmartLocation.with(context).location().state().isAnyProviderAvailable()){
             SmartLocation.with(context).location().oneFix().start(new OnLocationUpdatedListener() {
                 @Override
                 public void onLocationUpdated(Location location) {

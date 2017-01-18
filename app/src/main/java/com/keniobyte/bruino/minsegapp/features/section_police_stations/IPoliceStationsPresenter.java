@@ -11,7 +11,6 @@ import java.io.IOException;
 
 public interface IPoliceStationsPresenter {
     void showPoliceStation() throws JSONException, IOException;
-
     void onClickMyPoliceStations();
     void onClickListPoliceStations();
 }

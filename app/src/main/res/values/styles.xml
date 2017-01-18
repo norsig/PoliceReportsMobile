@@ -7,6 +7,7 @@
         <item name="colorAccent">@color/accent</item>
         <item name="colorButtonNormal">@color/accent</item>
         <item name="android:buttonStyle">@style/myStyleButton</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="myStyleButton" parent="@style/Base.Widget.AppCompat.Button">
@@ -21,7 +22,6 @@
 
     <style name="LinearProgress" parent="Theme.AppCompat.Light">
         <item name="colorAccent">@color/primaryDark</item>
-        <item name="android:progressBackgroundTint">#BBDEFB</item>
     </style>
 
     <style name="MyAppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

@@ -1,6 +1,7 @@
 package com.keniobyte.bruino.minsegapp;
 
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -9,7 +10,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.Window;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_home.SectionHomeFragment;
 import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_missing.SectionMissingPersonActivity;
@@ -20,10 +25,6 @@ import com.keniobyte.bruino.minsegapp.features.section_police_stations.PoliceSta
 import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-/**
- * Main activity: checks if user is logged in(fully functional but not implemented yet) and downloads police stations kml
- */
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private final String TAG = getClass().getSimpleName();
@@ -48,9 +49,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
+        RelativeLayout navigationHeader = (RelativeLayout) navView.getHeaderView(0);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            // This is make sure navigation header is below status bar
+            // This only required for devices API >= 21
+            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) navigationHeader.getLayoutParams();
+            Log.i(TAG, String.valueOf(getStatusBarHeight()));
+            layoutParams.setMargins(0, getStatusBarHeight(), 0, 0);
+            navigationHeader.setLayoutParams(layoutParams);
+        }
+
         navView.setNavigationItemSelectedListener(this);
         navView.setCheckedItem(R.id.nav_home);
         navView.getMenu().performIdentifierAction(R.id.nav_home, 0);
+    }
+
+    public int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
     }
 
     @Override
