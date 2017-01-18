@@ -10,14 +10,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toolbar;
+import android.support.v7.widget.Toolbar;
 
 import com.keniobyte.bruino.minsegapp.R;
 import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_wanted.adapter.WantedPersonAdapterRecycler;
 import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_wanted.item.WantedProfileActivity;
-import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_wanted.model.WantedPerson;
+import com.keniobyte.bruino.minsegapp.model.WantedPerson;
 import com.keniobyte.bruino.minsegapp.utils.RecyclerItemClickListener;
 
 import java.text.SimpleDateFormat;
@@ -33,7 +34,7 @@ import nucleus.factory.RequiresPresenter;
 @RequiresPresenter(SectionWantedPersonPresenter.class)
 public class SectionWantedPersonActivity extends AppCompatActivity implements ISectionWantedPersonView {
 
-    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.myToolbar) Toolbar toolbar;
     @BindView(R.id.downloadPersonProgressBar) ProgressBar downloadPersonWantedProgressBar;
     @BindView(R.id.wantedRecyclerView) RecyclerView wantedRecyclerView;
 
@@ -78,6 +79,16 @@ public class SectionWantedPersonActivity extends AppCompatActivity implements IS
         presenter = new SectionWantedPersonPresenter(context);
         presenter.addView(this);
         presenter.setPersonsInList();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

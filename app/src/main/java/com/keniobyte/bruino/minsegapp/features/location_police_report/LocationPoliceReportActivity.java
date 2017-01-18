@@ -10,12 +10,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.Toolbar;
+import android.support.v7.widget.Toolbar;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -43,7 +44,7 @@ public class LocationPoliceReportActivity extends AppCompatActivity implements I
     private final double LAT = -26.8167;
     private final double LNG = -65.2167;
 
-    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.myToolbar) Toolbar toolbar;
     @BindView(R.id.addressAutoCompleteTextView) AutoCompleteTextView addressAutoCompleteTextView;
     @BindView(R.id.nextStepButton) Button nextStepButton;
 
@@ -117,6 +118,16 @@ public class LocationPoliceReportActivity extends AppCompatActivity implements I
 
         presenter = new LocationPoliceReportPresenter(context);
         presenter.addView(this);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

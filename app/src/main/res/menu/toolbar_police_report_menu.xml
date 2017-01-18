@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.keniobyte.bruino.minsegapp.features.police_report.PoliceReportActivityBeta2">
 
     <item android:id="@+id/action_attachedment"
         android:icon="@drawable/ic_attachment_white_24dp"
-        android:showAsAction="ifRoom"
+        app:showAsAction="ifRoom"
         tools:ignore="AppCompatResource"
         android:title="Adjuntar" />
 
     <item android:id="@+id/action_send_police_report"
         android:icon="@drawable/ic_send_white_24dp"
-        android:showAsAction="ifRoom"
+        app:showAsAction="ifRoom"
         tools:ignore="AppCompatResource"
         android:title="Enviar" />
 </menu>

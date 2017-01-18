@@ -5,12 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".features.location_police_report.LocationPoliceReportActivity">
 
-    <Toolbar
-        android:id="@+id/toolbar"
+    <include
+        android:id="@+id/myToolbar"
+        layout="@layout/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/primary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+        android:layout_height="wrap_content" />
 
     <AutoCompleteTextView
         android:id="@+id/addressAutoCompleteTextView"
@@ -19,9 +18,11 @@
         android:hint="@string/incidentAddress"
         android:maxLines="2"
         android:padding="@dimen/floating_label_inside_spacing"
-        android:layout_below="@+id/toolbar"
+        android:layout_below="@+id/myToolbar"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/map"

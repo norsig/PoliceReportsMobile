@@ -1,6 +1,4 @@
-package com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_wanted.model;
-
-import com.keniobyte.bruino.minsegapp.model.Person;
+package com.keniobyte.bruino.minsegapp.model;
 
 /**
  * @author bruino

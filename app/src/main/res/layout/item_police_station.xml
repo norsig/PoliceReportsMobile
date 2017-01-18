@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:padding="@dimen/activity_horizontal_margin"
     android:layout_height="wrap_content"
-    android:descendantFocusability="blocksDescendants">
+    android:descendantFocusability="blocksDescendants"
+    android:padding="@dimen/activity_horizontal_margin">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -11,42 +11,42 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/namePoliceStationTextView"
             style="@style/TextAppearance.AppCompat.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="NameStation"
-            android:id="@+id/namePoliceStationTextView" />
+            android:text="NameStation" />
 
         <TextView
+            android:id="@+id/localityPoliceStationTextView"
             style="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Locality"
-            android:id="@+id/localityPoliceStationTextView" />
+            android:text="Locality" />
 
         <TextView
+            android:id="@+id/addressPoliceStationTextView"
             style="@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Address"
-            android:id="@+id/addressPoliceStationTextView" />
+            android:text="Address" />
 
         <TextView
+            android:id="@+id/phonePoliceStationsTextView"
             style="@style/TextAppearance.AppCompat.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone"
-            android:id="@+id/phonePoliceStationsTextView" />
+            android:text="Phone" />
     </LinearLayout>
 
     <ImageButton
         android:id="@+id/callPoliceStationButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/ic_call_blue_48dp"
-        android:background="?attr/selectableItemBackgroundBorderless"/>
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_call_blue_48dp" />
 </RelativeLayout>

@@ -10,9 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toolbar;
+import android.support.v7.widget.Toolbar;
 
 import com.keniobyte.bruino.minsegapp.R;
 import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_missing.adapter.MissingPersonAdapterRecycler;
@@ -33,7 +34,7 @@ import nucleus.factory.RequiresPresenter;
 @RequiresPresenter(SectionMissingPersonPresenter.class)
 public class SectionMissingPersonActivity extends AppCompatActivity implements ISectionMissingPersonView {
 
-    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.myToolbar) Toolbar toolbar;
     @BindView(R.id.downloadPersonProgressBar) ProgressBar downloadMissingPersonProgressBar;
     @BindView(R.id.wantedRecyclerView) RecyclerView wantedRecyclerView;
 
@@ -78,6 +79,16 @@ public class SectionMissingPersonActivity extends AppCompatActivity implements I
         presenter = new SectionMissingPersonPresenter(context);
         presenter.addView(this);
         presenter.setPersonsInList();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

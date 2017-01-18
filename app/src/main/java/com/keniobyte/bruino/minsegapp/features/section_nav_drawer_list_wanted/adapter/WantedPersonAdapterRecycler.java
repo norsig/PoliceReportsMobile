@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.keniobyte.bruino.minsegapp.R;
-import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_wanted.model.WantedPerson;
+import com.keniobyte.bruino.minsegapp.model.WantedPerson;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;

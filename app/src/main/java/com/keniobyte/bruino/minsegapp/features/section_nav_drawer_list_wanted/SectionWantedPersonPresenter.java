@@ -9,7 +9,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.keniobyte.bruino.minsegapp.R;
 import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_wanted.adapter.WantedPersonAdapterRecycler;
-import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_wanted.model.WantedPerson;
+import com.keniobyte.bruino.minsegapp.model.WantedPerson;
 import com.keniobyte.bruino.minsegapp.requestHandler.MinSegAppSingleton;
 import com.keniobyte.bruino.minsegapp.ui.base.BasePresenter;
 

@@ -49,6 +49,7 @@
                     android:layout_gravity="bottom"
                     android:orientation="vertical">
 
+
                     <TextView
                         android:id="@+id/missingNameTextView"
                         style="@style/Base.TextAppearance.AppCompat.Large.Inverse"
@@ -66,6 +67,7 @@
                         android:layout_height="match_parent"
                         android:background="@color/backround_text_profile"
                         android:paddingBottom="@dimen/fab_margin"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
                         android:paddingStart="@dimen/activity_horizontal_margin"
                         android:text="LastTimeSee"
                         android:textColor="@color/white" />
@@ -97,6 +99,7 @@
                         style="@style/Base.TextAppearance.AppCompat.Body1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
                         android:paddingStart="@dimen/activity_horizontal_margin" />
                 </LinearLayout>
 
@@ -119,6 +122,7 @@
                         style="@style/Base.TextAppearance.AppCompat.Body1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
                         android:paddingStart="@dimen/activity_horizontal_margin" />
                 </LinearLayout>
 
@@ -143,12 +147,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/label_text_size"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
                         android:paddingStart="@dimen/activity_horizontal_margin" />
                 </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
-
 
 </LinearLayout>

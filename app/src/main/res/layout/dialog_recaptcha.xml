@@ -9,10 +9,10 @@
         style="@style/Base.TextAppearance.AppCompat.Medium"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/captcha_title"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:padding="@dimen/activity_vertical_margin"
+        android:text="@string/captcha_title"
         android:textAlignment="center" />
 
     <ProgressBar
@@ -35,27 +35,28 @@
         android:id="@+id/edit_text_captcha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textShortMessage"
-        android:layout_marginBottom="21dp" />
+        android:layout_marginBottom="21dp"
+        android:inputType="textShortMessage" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
             android:id="@+id/reload"
             style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/recharge"
-            android:layout_alignParentLeft="true" />
+            android:layout_alignParentLeft="true"
+            android:text="@string/recharge" />
 
         <Button
             android:id="@+id/okCaptcha"
             style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/accept"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentRight="true"
+            android:text="@string/accept" />
     </RelativeLayout>
 
 </LinearLayout>

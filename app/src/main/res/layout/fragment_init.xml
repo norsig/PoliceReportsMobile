@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,24 +27,24 @@
             style="@style/Base.TextAppearance.AppCompat.Large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
+            android:layout_toLeftOf="@+id/emergencyButton"
+            android:layout_toStartOf="@+id/emergencyButton"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:text="@string/call_911"
-            android:textStyle="bold"
-            android:textSize="60dp"
             android:textColor="@color/accent"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/emergencyButton"
-            android:layout_toStartOf="@+id/emergencyButton" />
+            android:textSize="60dp"
+            android:textStyle="bold" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/emergencyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clipChildren="false"
-            android:src="@drawable/ic_call_green_48dp"
+            android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:clipChildren="false"
+            android:src="@drawable/ic_call_green_48dp" />
 
     </RelativeLayout>
 

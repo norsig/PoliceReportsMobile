@@ -15,6 +15,7 @@ import android.lib.recaptcha.ReCaptcha;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
-import android.widget.Toolbar;
+import android.support.v7.widget.Toolbar;
 
 import com.kbeanie.multipicker.api.ImagePicker;
 import com.kbeanie.multipicker.api.Picker;
@@ -58,7 +59,7 @@ import nucleus.factory.RequiresPresenter;
 public class PoliceReportActivityBeta2 extends AppCompatActivity implements IPoliceReportView, IPoliceReportPresenter.onListAttachmentsListener {
     public String TAG = getClass().getSimpleName();
 
-    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.myToolbar) Toolbar toolbar;
     @BindView(R.id.namePerpetratorEditText) EditText namePerpetratorEditText;
     @BindView(R.id.datetimeButton) Button datetimeButton;
     @BindView(R.id.descriptionEditText) @NotEmpty(trim = true) EditText descriptionEditText;
@@ -128,21 +129,6 @@ public class PoliceReportActivityBeta2 extends AppCompatActivity implements IPol
         });
 
         setTitleToolbar();
-        toolbar.inflateMenu(R.menu.toolbar_police_report_menu);
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    case R.id.action_attachedment:
-                        pickImageSingle();
-                        return true;
-                    case R.id.action_send_police_report:
-                        validator.validate();
-                        return true;
-                }
-                return false;
-            }
-        });
         toolbar.setNavigationIcon(arrowBack);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,6 +136,7 @@ public class PoliceReportActivityBeta2 extends AppCompatActivity implements IPol
                 finish();
             }
         });
+        setSupportActionBar(toolbar);
 
         progressDialog = new ProgressDialog(context);
         progressDialog.setTitle(progressDialogTitle);
@@ -165,6 +152,28 @@ public class PoliceReportActivityBeta2 extends AppCompatActivity implements IPol
         interactor = new PoliceReportInteractor(this);
         presenter = new PoliceReportPresenter(interactor);
         presenter.addView(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_police_report_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+            case R.id.action_attachedment:
+                pickImageSingle();
+                return true;
+            case R.id.action_send_police_report:
+                validator.validate();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

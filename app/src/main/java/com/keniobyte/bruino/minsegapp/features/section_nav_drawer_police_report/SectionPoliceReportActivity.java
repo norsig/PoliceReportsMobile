@@ -9,11 +9,12 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.Toolbar;
+import android.support.v7.widget.Toolbar;
 
 import com.keniobyte.bruino.minsegapp.R;
 import com.keniobyte.bruino.minsegapp.features.location_police_report.LocationPoliceReportActivity;
@@ -30,7 +31,7 @@ import nucleus.factory.RequiresPresenter;
 @RequiresPresenter(SectionPoliceReportPresenter.class)
 public class SectionPoliceReportActivity extends AppCompatActivity implements ISectionPoliceReportView {
 
-    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.myToolbar) Toolbar toolbar;
     @BindView(R.id.checkingVersionProgressBar) ProgressBar checkingVersionProgressBar;
     @BindView(R.id.policeReportDrugsButton) Button policeReportDrugsButton;
     @BindView(R.id.policeReportAircraftButton) Button policeReportAircraftButton;
@@ -75,6 +76,16 @@ public class SectionPoliceReportActivity extends AppCompatActivity implements IS
         } catch (PackageManager.NameNotFoundException | JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

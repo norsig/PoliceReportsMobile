@@ -68,7 +68,8 @@
                             android:textColor="@color/white"
                             android:paddingStart="@dimen/activity_horizontal_margin"
                             android:paddingBottom="@dimen/fab_margin"
-                            android:text="LastTimeSee" />
+                            android:text="LastTimeSee"
+                            android:paddingLeft="@dimen/activity_horizontal_margin" />
 
                         <TextView
                             android:id="@+id/wantedRewardTextView"
@@ -80,7 +81,9 @@
                             android:paddingBottom="@dimen/fab_margin"
                             android:text="Reward"
                             android:layout_alignParentTop="true"
-                            android:layout_alignParentEnd="true" />
+                            android:layout_alignParentEnd="true"
+                            android:paddingRight="@dimen/activity_horizontal_margin"
+                            android:layout_alignParentRight="true" />
                     </RelativeLayout>
                 </LinearLayout>
 
@@ -109,7 +112,8 @@
                         style="@style/Base.TextAppearance.AppCompat.Body1"
                         android:paddingStart="@dimen/activity_horizontal_margin"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/activity_horizontal_margin" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -130,7 +134,8 @@
                         style="@style/Base.TextAppearance.AppCompat.Body1"
                         android:paddingStart="@dimen/activity_horizontal_margin"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/activity_horizontal_margin" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -151,7 +156,8 @@
                         style="@style/Base.TextAppearance.AppCompat.Body1"
                         android:paddingStart="@dimen/activity_horizontal_margin"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/activity_horizontal_margin" />
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/wantedDescriptionView"
@@ -173,7 +179,8 @@
                         android:paddingStart="@dimen/activity_horizontal_margin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/label_text_size" />
+                        android:padding="@dimen/label_text_size"
+                        android:paddingLeft="@dimen/activity_horizontal_margin" />
                 </LinearLayout>
             </LinearLayout>
 

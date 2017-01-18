@@ -16,8 +16,8 @@
         android:id="@+id/descriptionPersonEditText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/description"
         android:background="@null"
+        android:hint="@string/description"
         android:inputType="textMultiLine"
         android:padding="16dp" />
 

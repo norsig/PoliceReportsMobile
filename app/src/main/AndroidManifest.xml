@@ -35,15 +35,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.LoginActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.SignUpActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.SignUpValidationActivity"
-            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -55,12 +46,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/API_KEY_GOOGLE_MAPS" />
-
-        <receiver android:name=".model.SmsListener">
-            <intent-filter android:priority="1000">
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
-            </intent-filter>
-        </receiver>
 
         <activity android:name=".features.police_report.PoliceReportActivityBeta2" />
         <activity android:name=".features.location_police_report.LocationPoliceReportActivity" />
