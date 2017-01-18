@@ -19,7 +19,11 @@ public interface ILocationPoliceReportView {
 
     void setEnableNextStepButton(boolean i);
     void addMarkerInGoogleMap(LatLng latLng);
+    void hintToTextAutoCompleteTextView();
+    void showProgressBar();
+    void hideProgressBar();
     void setTextAutoCompleteTextView(String string);
+    void setHintAutoCompleteTextView(String string);
     void setResultAddressList(ArrayList resultAddressList);
     void setLocationPoliceReport(LatLng location);
     void setAdapterAutoCompleteTextView(ArrayAdapter adapter);

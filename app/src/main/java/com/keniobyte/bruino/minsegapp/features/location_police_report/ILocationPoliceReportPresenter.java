@@ -19,4 +19,5 @@ public interface ILocationPoliceReportPresenter {
     void onMapClick(LatLng latLng);
 
     void unregisterReceiver();
+    void onClickInAutoCompleteTextView();
 }

@@ -57,6 +57,7 @@ public class LocationPoliceReportPresenter extends BasePresenter<LocationPoliceR
 
     @Override
     public void resultAddressList(String input) throws UnsupportedEncodingException {
+        locationPoliceReportView.showProgressBar();
         String url = PLACES_API_BASE + TYPE_AUTOCOMPLETE
                 + OUT_JSON
                 + "?key=" + keyGoogleMapsAddress
@@ -91,7 +92,9 @@ public class LocationPoliceReportPresenter extends BasePresenter<LocationPoliceR
         for (int i = 0; i < predsJsonArray.length(); i++) {
             resultList.add(predsJsonArray.getJSONObject(i).getString("description"));
         }
+        locationPoliceReportView.setEnableNextStepButton(false);
         locationPoliceReportView.setResultAddressList(resultList);
+        locationPoliceReportView.hideProgressBar();
         locationPoliceReportView.setAdapterAutoCompleteTextView(locationPoliceReportView.createArrayAdapter());
     }
 
@@ -106,6 +109,7 @@ public class LocationPoliceReportPresenter extends BasePresenter<LocationPoliceR
                     LatLng location = new LatLng(list.get(0).getAddress().getLatitude()
                             , list.get(0).getAddress().getLongitude());
                     locationPoliceReportView.addMarkerInGoogleMap(location);
+                    locationPoliceReportView.setEnableNextStepButton(true);
                     locationPoliceReportView.setLocationPoliceReport(location);
                 }
             }
@@ -120,6 +124,8 @@ public class LocationPoliceReportPresenter extends BasePresenter<LocationPoliceR
     @Override
     public void onMapClick(final LatLng latLng) {
         locationPoliceReportView.addMarkerInGoogleMap(latLng);
+        locationPoliceReportView.setEnableNextStepButton(false);
+        locationPoliceReportView.showProgressBar();
         Location location = new Location(LocationManager.GPS_PROVIDER);
         location.setLatitude(latLng.latitude);
         location.setLongitude(latLng.longitude);
@@ -129,11 +135,14 @@ public class LocationPoliceReportPresenter extends BasePresenter<LocationPoliceR
                     public void onAddressResolved(Location location, List<Address> list) {
                         if (list.size() > 0){
                             String address = list.get(0).getAddressLine(0);
-                            locationPoliceReportView.setTextAutoCompleteTextView(address);
+                            locationPoliceReportView.hideProgressBar();
+                            locationPoliceReportView.setTextAutoCompleteTextView("");
+                            locationPoliceReportView.setHintAutoCompleteTextView(address);
                             locationPoliceReportView.setLocationPoliceReport(latLng);
                             locationPoliceReportView.setEnableNextStepButton(true);
                         } else {
                             locationPoliceReportView.geocodingReverseMessageError();
+                            locationPoliceReportView.hideProgressBar();
                         }
                     }
                 });
@@ -142,5 +151,10 @@ public class LocationPoliceReportPresenter extends BasePresenter<LocationPoliceR
     @Override
     public void unregisterReceiver() {
         SmartLocation.with(context).geocoding().stop();
+    }
+
+    @Override
+    public void onClickInAutoCompleteTextView() {
+        locationPoliceReportView.hintToTextAutoCompleteTextView();
     }
 }

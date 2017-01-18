@@ -17,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.support.v7.widget.Toolbar;
+import android.widget.ProgressBar;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -46,6 +47,7 @@ public class LocationPoliceReportActivity extends AppCompatActivity implements I
 
     @BindView(R.id.myToolbar) Toolbar toolbar;
     @BindView(R.id.addressAutoCompleteTextView) AutoCompleteTextView addressAutoCompleteTextView;
+    @BindView(R.id.progressBar) ProgressBar progressBar;
     @BindView(R.id.nextStepButton) Button nextStepButton;
 
     @BindDrawable(R.drawable.ic_arrow_back_white_24dp) Drawable arrowBack;
@@ -104,6 +106,12 @@ public class LocationPoliceReportActivity extends AppCompatActivity implements I
                 }
             }
         });
+        addressAutoCompleteTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.onClickInAutoCompleteTextView();
+            }
+        });
         addressAutoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -118,6 +126,7 @@ public class LocationPoliceReportActivity extends AppCompatActivity implements I
 
         presenter = new LocationPoliceReportPresenter(context);
         presenter.addView(this);
+        setEnableNextStepButton(false);
     }
 
     @Override
@@ -162,8 +171,29 @@ public class LocationPoliceReportActivity extends AppCompatActivity implements I
     }
 
     @Override
+    public void hintToTextAutoCompleteTextView() {
+        addressAutoCompleteTextView.setText(addressAutoCompleteTextView.getHint().toString());
+        addressAutoCompleteTextView.setSelection(addressAutoCompleteTextView.getText().toString().length());
+    }
+
+    @Override
+    public void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
     public void setTextAutoCompleteTextView(String string) {
         addressAutoCompleteTextView.setText(string);
+    }
+
+    @Override
+    public void setHintAutoCompleteTextView(String string) {
+        addressAutoCompleteTextView.setHint(string);
     }
 
     @Override
