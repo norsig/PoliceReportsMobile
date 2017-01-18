@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * @author bruino
- * @version 17/01/17.
+ * @version 18/01/17.
  */
 
 public class PoliceStationInfoPresenter extends BasePresenter<PoliceStationsInfoActivity> implements IPoliceStationsInfoPresenter {
@@ -33,22 +33,7 @@ public class PoliceStationInfoPresenter extends BasePresenter<PoliceStationsInfo
 
     @Override
     public void setPoliceStationsInList() throws IOException, JSONException {
-        JSONObject policeStationJson = policeStationsInteractor.getPoliceStations();
-        Log.i(policeStationInfoView.getClass().getSimpleName(), policeStationJson.toString());
-        List<PoliceStation> policeStations = new ArrayList<>();
-
-        for (int i = 0; i < policeStationJson.getJSONArray("police_stations").length(); i++){
-            policeStations.add(new PoliceStation(policeStationJson.getJSONArray("police_stations").getJSONObject(i).getInt("id")
-                    , policeStationJson.getJSONArray("police_stations").getJSONObject(i).getString("name")
-                    , policeStationJson.getJSONArray("police_stations").getJSONObject(i).getString("city")
-                    , policeStationJson.getJSONArray("police_stations").getJSONObject(i).getString("address")
-                    , policeStationJson.getJSONArray("police_stations").getJSONObject(i).getString("phone")
-                    , (float) policeStationJson.getJSONArray("police_stations").getJSONObject(i).getDouble("lat")
-                    , (float) policeStationJson.getJSONArray("police_stations").getJSONObject(i).getDouble("lng")
-                    , policeStationJson.getJSONArray("police_stations").getJSONObject(i).getInt("jurisdiction_id")
-            ));
-        }
-
+        List<PoliceStation> policeStations = policeStationsInteractor.getPoliceStations();;
         policeStationInfoView.setPoliceStationAdapter(policeStationInfoView.createPoliceStationAdapter(policeStations));
     }
 

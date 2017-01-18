@@ -11,6 +11,7 @@ import com.google.maps.android.kml.KmlContainer;
 import com.google.maps.android.kml.KmlPlacemark;
 import com.google.maps.android.kml.KmlPolygon;
 import com.keniobyte.bruino.minsegapp.R;
+import com.keniobyte.bruino.minsegapp.model.PoliceStation;
 import com.keniobyte.bruino.minsegapp.ui.base.BasePresenter;
 import com.keniobyte.bruino.minsegapp.utils.Polygon.Point;
 import com.keniobyte.bruino.minsegapp.utils.Polygon.Polygon;
@@ -20,13 +21,14 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import io.nlopez.smartlocation.OnLocationUpdatedListener;
 import io.nlopez.smartlocation.SmartLocation;
 
 /**
  * @author bruino
- * @version 17/01/17.
+ * @version 18/01/17.
  */
 
 public class PoliceStationsPresenter extends BasePresenter<PoliceStationsActivity> implements IPoliceStationsPresenter {
@@ -34,7 +36,7 @@ public class PoliceStationsPresenter extends BasePresenter<PoliceStationsActivit
     private IPoliceStationsInteractor policeStationsInteractor;
     private Context context;
 
-    private JSONObject policeStations;
+    private List<PoliceStation> policeStations;
 
     public PoliceStationsPresenter(Context context, IPoliceStationsInteractor policeStationsInteractor) {
         this.context = context;
@@ -50,13 +52,12 @@ public class PoliceStationsPresenter extends BasePresenter<PoliceStationsActivit
         policeStations = policeStationsInteractor.getPoliceStations();
         ArrayList<MarkerOptions> markerOptionsArrayList = new ArrayList<>();
 
-        for (int i = 0; i < policeStations.getJSONArray("police_stations").length(); i++) {
-            MarkerOptions markerOptions = new MarkerOptions().position(new LatLng(
-                        policeStations.getJSONArray("police_stations").getJSONObject(i).getDouble("lat"),
-                        policeStations.getJSONArray("police_stations").getJSONObject(i).getDouble("lng")))
+        for (int i = 0; i < policeStations.size(); i++) {
+            MarkerOptions markerOptions = new MarkerOptions()
+                    .position(new LatLng(policeStations.get(i).getLatitude(), policeStations.get(i).getLongitude()))
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
-                    .title(policeStations.getJSONArray("police_stations").getJSONObject(i).getString("name"))
-                    .snippet(context.getResources().getString(R.string.jurisdiction) + " " + policeStations.getJSONArray("police_stations").getJSONObject(i).getString("jurisdiction_id"));
+                    .title(policeStations.get(i).getName())
+                    .snippet(context.getResources().getString(R.string.jurisdiction) + " " + policeStations.get(i).getId());
             markerOptionsArrayList.add(markerOptions);
         }
         policeStationsView.setMarkersPoliceStations(policeStationsView.showPoliceStations(markerOptionsArrayList));
@@ -119,11 +120,10 @@ public class PoliceStationsPresenter extends BasePresenter<PoliceStationsActivit
     private String getPoliceStation(int num_jurisdiction) throws JSONException {
         String station_name = null;
 
-        for (int i = 0; i < policeStations.getJSONArray("police_stations").length(); i++) {
+        for (int i = 0; i < policeStations.size(); i++) {
 
-            if (policeStations.getJSONArray("police_stations").getJSONObject(i).getInt("jurisdiction_id")
-                    == num_jurisdiction) {
-                station_name = policeStations.getJSONArray("police_stations").getJSONObject(i).getString("name");
+            if (policeStations.get(i).getJurisdiction() == num_jurisdiction) {
+                station_name = policeStations.get(i).getName();
             }
         }
         return station_name;
