@@ -1,7 +1,6 @@
 package com.keniobyte.bruino.minsegapp;
 
 import android.content.Intent;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -12,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -49,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
+        //http://stackoverflow.com/questions/37491093/android-navigationdrawer-overlap-by-status-bar#37491463
         RelativeLayout navigationHeader = (RelativeLayout) navView.getHeaderView(0);
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             // This is make sure navigation header is below status bar
