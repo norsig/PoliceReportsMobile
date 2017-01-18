@@ -73,7 +73,7 @@ public class PoliceStationsActivity extends AppCompatActivity implements IPolice
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_police_station);
+        setContentView(R.layout.police_station_activity_map);
         ButterKnife.bind(this);
 
         toolbar.setTitle(title);
@@ -113,7 +113,7 @@ public class PoliceStationsActivity extends AppCompatActivity implements IPolice
         googleMap.getUiSettings().setZoomControlsEnabled(true);
         this.googleMap = googleMap;
         try {
-            jurisdictionKmlLayer = new KmlLayer(googleMap, R.raw.map_v2, context);
+            jurisdictionKmlLayer = new KmlLayer(googleMap, R.raw.police_stations_jurisdictions, context);
             jurisdictionKmlLayer.addLayerToMap();
         } catch (XmlPullParserException | IOException e) {
             e.printStackTrace();

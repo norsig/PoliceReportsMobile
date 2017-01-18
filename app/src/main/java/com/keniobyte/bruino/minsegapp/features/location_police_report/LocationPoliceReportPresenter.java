@@ -13,8 +13,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.android.gms.maps.model.LatLng;
 import com.keniobyte.bruino.minsegapp.R;
-import com.keniobyte.bruino.minsegapp.requestHandler.MinSegAppSingleton;
-import com.keniobyte.bruino.minsegapp.ui.base.BasePresenter;
+import com.keniobyte.bruino.minsegapp.network.MinSegAppSingleton;
+import com.keniobyte.bruino.minsegapp.views.base.BasePresenter;
 
 import org.json.JSONArray;
 import org.json.JSONException;

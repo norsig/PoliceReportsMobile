@@ -3,8 +3,8 @@ package com.keniobyte.bruino.minsegapp.features.police_report;
 import android.content.Context;
 import android.util.Log;
 
-import com.keniobyte.bruino.minsegapp.model.PoliceReport;
-import com.keniobyte.bruino.minsegapp.requestHandler.MinSegAppRestClient;
+import com.keniobyte.bruino.minsegapp.models.PoliceReport;
+import com.keniobyte.bruino.minsegapp.network.MinSegAppRestClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 

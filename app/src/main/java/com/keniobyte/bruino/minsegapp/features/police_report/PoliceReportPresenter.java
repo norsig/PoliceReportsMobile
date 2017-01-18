@@ -2,8 +2,8 @@ package com.keniobyte.bruino.minsegapp.features.police_report;
 
 import com.kbeanie.multipicker.api.entity.ChosenImage;
 import com.keniobyte.bruino.minsegapp.R;
-import com.keniobyte.bruino.minsegapp.model.PoliceReport;
-import com.keniobyte.bruino.minsegapp.ui.base.BasePresenter;
+import com.keniobyte.bruino.minsegapp.models.PoliceReport;
+import com.keniobyte.bruino.minsegapp.views.base.BasePresenter;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -15,7 +15,7 @@ import java.util.Locale;
  * @version 02/01/17.
  */
 
-public class PoliceReportPresenter extends BasePresenter<PoliceReportActivityBeta2> implements IPoliceReportPresenter, IPoliceReportInteractor.OnSendReportFinishedListener {
+public class PoliceReportPresenter extends BasePresenter<PoliceReportActivity> implements IPoliceReportPresenter, IPoliceReportInteractor.OnSendReportFinishedListener {
     private IPoliceReportInteractor policeReportInteractor;
     private IPoliceReportView policeReportView;
 

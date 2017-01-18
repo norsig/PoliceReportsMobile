@@ -11,13 +11,12 @@ import com.google.maps.android.kml.KmlContainer;
 import com.google.maps.android.kml.KmlPlacemark;
 import com.google.maps.android.kml.KmlPolygon;
 import com.keniobyte.bruino.minsegapp.R;
-import com.keniobyte.bruino.minsegapp.model.PoliceStation;
-import com.keniobyte.bruino.minsegapp.ui.base.BasePresenter;
+import com.keniobyte.bruino.minsegapp.models.PoliceStation;
+import com.keniobyte.bruino.minsegapp.views.base.BasePresenter;
 import com.keniobyte.bruino.minsegapp.utils.Polygon.Point;
 import com.keniobyte.bruino.minsegapp.utils.Polygon.Polygon;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;

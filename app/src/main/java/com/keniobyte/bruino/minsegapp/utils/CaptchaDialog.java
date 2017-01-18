@@ -54,7 +54,7 @@ public class CaptchaDialog extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.dialog_recaptcha, container, false);
+        View view = inflater.inflate(R.layout.captcha_dialog, container, false);
         unbinder = ButterKnife.bind(this, view);
 
         getDialog().setCanceledOnTouchOutside(false);

@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_missing.missing_report.MissingReportActivity">
+    tools:context="com.keniobyte.bruino.minsegapp.features.section_list_missing.missing_report.MissingReportActivity">
 
     <item android:id="@+id/action_send_person_report"
         android:icon="@drawable/ic_send_white_24dp"

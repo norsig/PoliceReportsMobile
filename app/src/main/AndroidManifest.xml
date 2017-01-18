@@ -47,15 +47,15 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/API_KEY_GOOGLE_MAPS" />
 
-        <activity android:name=".features.police_report.PoliceReportActivityBeta2" />
+        <activity android:name=".features.police_report.PoliceReportActivity" />
         <activity android:name=".features.location_police_report.LocationPoliceReportActivity" />
-        <activity android:name=".features.section_nav_drawer_police_report.SectionPoliceReportActivity" />
-        <activity android:name=".features.section_nav_drawer_list_wanted.SectionWantedPersonActivity" />
-        <activity android:name=".features.section_nav_drawer_list_missing.SectionMissingPersonActivity" />
-        <activity android:name=".features.section_nav_drawer_list_missing.item.MissingProfileActivity" />
-        <activity android:name=".features.section_nav_drawer_list_wanted.item.WantedProfileActivity" />
-        <activity android:name=".features.section_nav_drawer_list_missing.missing_report.MissingReportActivity" />
-        <activity android:name=".features.section_nav_drawer_list_wanted.wanted_report.WantedReportActivity" />
+        <activity android:name=".features.section_police_report.SectionPoliceReportActivity" />
+        <activity android:name=".features.section_list_wanted.SectionWantedPersonActivity" />
+        <activity android:name=".features.section_list_missing.SectionMissingPersonActivity" />
+        <activity android:name=".features.section_list_missing.item.MissingProfileActivity" />
+        <activity android:name=".features.section_list_wanted.item.WantedProfileActivity" />
+        <activity android:name=".features.section_list_missing.missing_report.MissingReportActivity" />
+        <activity android:name=".features.section_list_wanted.wanted_report.WantedReportActivity" />
         <activity android:name=".features.section_police_stations.PoliceStationsActivity" />
         <activity android:name=".features.section_police_stations.listPoliceStations.PoliceStationsInfoActivity"></activity>
     </application>

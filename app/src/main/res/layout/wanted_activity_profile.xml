@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".features.section_list_missing.item.MissingProfileActivity">
+
+    <include
+        android:id="@+id/myToolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.design.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <com.keniobyte.bruino.minsegapp.utils.SquareImageView
+                        android:id="@+id/wantedProfileImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                    <ProgressBar
+                        android:id="@+id/loadImageWantedProgressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="bottom">
+                    <TextView
+                        android:id="@+id/wantedNameTextView"
+                        style="@style/Base.TextAppearance.AppCompat.Large.Inverse"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#5e000000"
+                        android:padding="@dimen/activity_horizontal_margin"
+                        android:text="Name" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:background="@color/backround_text_profile">
+                        <TextView
+                            android:id="@+id/wantedLastTimeSeeTextView"
+                            style="@style/Base.TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:paddingStart="@dimen/activity_horizontal_margin"
+                            android:paddingBottom="@dimen/fab_margin"
+                            android:text="LastTimeSee"
+                            android:paddingLeft="@dimen/activity_horizontal_margin" />
+
+                        <TextView
+                            android:id="@+id/wantedRewardTextView"
+                            style="@style/Base.TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:paddingEnd="@dimen/activity_horizontal_margin"
+                            android:paddingBottom="@dimen/fab_margin"
+                            android:text="Reward"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:paddingRight="@dimen/activity_horizontal_margin"
+                            android:layout_alignParentRight="true" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </android.support.design.widget.CoordinatorLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/activity_horizontal_margin">
+                    <TextView
+                        style="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/crime"
+                        android:textColor="@color/primaryDark"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/wantedCrimeTextView"
+                        style="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:paddingStart="@dimen/activity_horizontal_margin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/activity_horizontal_margin" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/activity_horizontal_margin">
+                    <TextView
+                        style="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/age"
+                        android:textColor="@color/primaryDark"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/wantedAgeTextView"
+                        style="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:paddingStart="@dimen/activity_horizontal_margin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/activity_horizontal_margin" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/activity_horizontal_margin">
+                    <TextView
+                        style="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sex"
+                        android:textColor="@color/primaryDark"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/wantedGenderTextView"
+                        style="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:paddingStart="@dimen/activity_horizontal_margin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/activity_horizontal_margin" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/wantedDescriptionView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/activity_horizontal_margin">
+                    <TextView
+                        style="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/description"
+                        android:textColor="@color/primaryDark"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/wantedDescriptionTextView"
+                        style="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:paddingStart="@dimen/activity_horizontal_margin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/label_text_size"
+                        android:paddingLeft="@dimen/activity_horizontal_margin" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

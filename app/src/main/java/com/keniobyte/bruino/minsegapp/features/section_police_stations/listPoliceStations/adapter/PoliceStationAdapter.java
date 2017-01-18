@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.keniobyte.bruino.minsegapp.R;
 import com.keniobyte.bruino.minsegapp.features.section_police_stations.listPoliceStations.PoliceStationsInfoActivity;
-import com.keniobyte.bruino.minsegapp.model.PoliceStation;
+import com.keniobyte.bruino.minsegapp.models.PoliceStation;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ import butterknife.ButterKnife;
 public class PoliceStationAdapter extends ArrayAdapter<PoliceStation> {
 
     public PoliceStationAdapter(Context context, List<PoliceStation> objects) {
-        super(context, R.layout.item_police_station, objects);
+        super(context, R.layout.police_station_item, objects);
     }
 
     @NonNull
@@ -37,7 +37,7 @@ public class PoliceStationAdapter extends ArrayAdapter<PoliceStation> {
         if (convertView != null){
             holder = (ViewHolder) convertView.getTag();
         } else {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_police_station, null);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.police_station_item, null);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         }

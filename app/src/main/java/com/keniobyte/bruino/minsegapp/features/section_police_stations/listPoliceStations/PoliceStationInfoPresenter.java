@@ -1,16 +1,12 @@
 package com.keniobyte.bruino.minsegapp.features.section_police_stations.listPoliceStations;
 
-import android.util.Log;
-
 import com.keniobyte.bruino.minsegapp.features.section_police_stations.IPoliceStationsInteractor;
-import com.keniobyte.bruino.minsegapp.model.PoliceStation;
-import com.keniobyte.bruino.minsegapp.ui.base.BasePresenter;
+import com.keniobyte.bruino.minsegapp.models.PoliceStation;
+import com.keniobyte.bruino.minsegapp.views.base.BasePresenter;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

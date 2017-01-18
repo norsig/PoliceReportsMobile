@@ -1,9 +1,8 @@
 package com.keniobyte.bruino.minsegapp.features.section_police_stations;
 
-import com.keniobyte.bruino.minsegapp.model.PoliceStation;
+import com.keniobyte.bruino.minsegapp.models.PoliceStation;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.List;

@@ -1,10 +1,9 @@
 package com.keniobyte.bruino.minsegapp.features.section_police_stations;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.keniobyte.bruino.minsegapp.R;
-import com.keniobyte.bruino.minsegapp.model.PoliceStation;
+import com.keniobyte.bruino.minsegapp.models.PoliceStation;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,7 +45,7 @@ public class PoliceStationsInteractor implements IPoliceStationsInteractor {
     }
 
     private JSONObject getPoliceStationsJson() throws IOException, JSONException {
-        InputStream openRawResource = context.getResources().openRawResource(R.raw.police_stations_json);
+        InputStream openRawResource = context.getResources().openRawResource(R.raw.police_stations_info);
         byte[] b = new byte[openRawResource.available()];
         openRawResource.read(b);
         String string = new String(b);

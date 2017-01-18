@@ -14,10 +14,10 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_home.SectionHomeFragment;
-import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_missing.SectionMissingPersonActivity;
-import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_list_wanted.SectionWantedPersonActivity;
-import com.keniobyte.bruino.minsegapp.features.section_nav_drawer_police_report.SectionPoliceReportActivity;
+import com.keniobyte.bruino.minsegapp.features.section_home.SectionHomeFragment;
+import com.keniobyte.bruino.minsegapp.features.section_list_missing.SectionMissingPersonActivity;
+import com.keniobyte.bruino.minsegapp.features.section_list_wanted.SectionWantedPersonActivity;
+import com.keniobyte.bruino.minsegapp.features.section_police_report.SectionPoliceReportActivity;
 import com.keniobyte.bruino.minsegapp.features.section_police_stations.PoliceStationsActivity;
 
 import butterknife.BindString;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.home_activity);
         ButterKnife.bind(this);
 
         toolbar.setTitle(title);

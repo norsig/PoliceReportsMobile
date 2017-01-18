@@ -14,11 +14,6 @@
         <item name="android:paddingRight">16dp</item>
     </style>
 
-    <style name="ButtonInternalAffairs" parent="@style/Base.Widget.AppCompat.Button">
-        <item name="android:background">#ffffff</item>
-        <item name="android:textColor">@color/primary</item>
-    </style>
-
     <style name="LinearProgress" parent="Theme.AppCompat.Light">
         <item name="colorAccent">@color/primaryDark</item>
     </style>

@@ -18,7 +18,7 @@ import android.widget.ListView;
 import com.keniobyte.bruino.minsegapp.R;
 import com.keniobyte.bruino.minsegapp.features.section_police_stations.PoliceStationsInteractor;
 import com.keniobyte.bruino.minsegapp.features.section_police_stations.listPoliceStations.adapter.PoliceStationAdapter;
-import com.keniobyte.bruino.minsegapp.model.PoliceStation;
+import com.keniobyte.bruino.minsegapp.models.PoliceStation;
 
 import org.json.JSONException;
 
@@ -48,7 +48,7 @@ public class PoliceStationsInfoActivity extends AppCompatActivity implements IPo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_view_police_station);
+        setContentView(R.layout.police_station_activity_list);
         ButterKnife.bind(this);
 
         toolbar.setTitle(title);

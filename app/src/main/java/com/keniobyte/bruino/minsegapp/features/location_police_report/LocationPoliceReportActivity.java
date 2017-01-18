@@ -26,8 +26,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.keniobyte.bruino.minsegapp.R;
-import com.keniobyte.bruino.minsegapp.features.police_report.PoliceReportActivityBeta2;
-import com.keniobyte.bruino.minsegapp.model.PoliceReport;
+import com.keniobyte.bruino.minsegapp.features.police_report.PoliceReportActivity;
+import com.keniobyte.bruino.minsegapp.models.PoliceReport;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -71,7 +71,7 @@ public class LocationPoliceReportActivity extends AppCompatActivity implements I
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.location_police_report);
+        setContentView(R.layout.police_report_activity_location);
         ButterKnife.bind(this);
 
         setTitleToolbar();
@@ -83,7 +83,7 @@ public class LocationPoliceReportActivity extends AppCompatActivity implements I
             }
         });
 
-        ArrayAdapter adapter = new ArrayAdapter<ArrayList>(context, R.layout.list_item, resultAddressList);
+        ArrayAdapter adapter = new ArrayAdapter<ArrayList>(context, R.layout.item_list, resultAddressList);
         addressAutoCompleteTextView.setAdapter(adapter);
         addressAutoCompleteTextView.addTextChangedListener(new TextWatcher() {
             @Override
@@ -156,7 +156,7 @@ public class LocationPoliceReportActivity extends AppCompatActivity implements I
 
     @Override
     public ArrayAdapter createArrayAdapter() {
-        return new ArrayAdapter<ArrayList>(context, R.layout.list_item, resultAddressList);
+        return new ArrayAdapter<ArrayList>(context, R.layout.item_list, resultAddressList);
     }
 
     @Override
@@ -213,7 +213,7 @@ public class LocationPoliceReportActivity extends AppCompatActivity implements I
 
     @Override
     public void navigationToPoliceReportActivity() {
-        startActivity(new Intent(context, PoliceReportActivityBeta2.class)
+        startActivity(new Intent(context, PoliceReportActivity.class)
                 .putExtra("type_report", getTypePoliceReport())
                 .putExtra("latitude", locationPoliceReport.latitude)
                 .putExtra("longitude", locationPoliceReport.longitude)

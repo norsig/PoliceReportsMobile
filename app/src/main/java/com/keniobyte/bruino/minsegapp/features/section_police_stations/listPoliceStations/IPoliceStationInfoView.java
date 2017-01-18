@@ -1,7 +1,7 @@
 package com.keniobyte.bruino.minsegapp.features.section_police_stations.listPoliceStations;
 
 import com.keniobyte.bruino.minsegapp.features.section_police_stations.listPoliceStations.adapter.PoliceStationAdapter;
-import com.keniobyte.bruino.minsegapp.model.PoliceStation;
+import com.keniobyte.bruino.minsegapp.models.PoliceStation;
 
 import java.util.List;
 
