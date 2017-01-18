@@ -7,7 +7,6 @@
         <item name="colorAccent">@color/accent</item>
         <item name="colorButtonNormal">@color/accent</item>
         <item name="android:buttonStyle">@style/myStyleButton</item>
-        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="myStyleButton" parent="@style/Base.Widget.AppCompat.Button">
